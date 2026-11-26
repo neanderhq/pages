@@ -41,6 +41,12 @@ PostgreSQL database, seed fictional content and supply the built
 smoke entrypoint. HTTPS production behavior remains enforced; local browser
 verification uses only its own disposable TLS fixture.
 
+The smoke entrypoint provisions the pinned Playwright Chromium browser and its
+system dependencies before launch. It works on the private publisher's clean
+runner without relying on an earlier browser test. Runtime CI verifies this with
+a separate empty browser cache. Chromium is a verification tool, not part of the
+shipped application image.
+
 Reports, runtime data and raw browser captures belong outside committed source
 or under ignored `.cache/`. Only deliberately reviewed fictional screenshots
 belong in the gallery. Never use live credentials or send external email as a
