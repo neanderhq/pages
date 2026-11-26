@@ -1,0 +1,14 @@
+.git
+node_modules
+.pnpm-store
+.data
+.tmp
+.cache
+.local
+artifacts
+dist
+.env
+.env.*
+*.log
+.DS_Store
+__pycache__

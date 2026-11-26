@@ -1,0 +1,10 @@
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import { createRoot } from "react-dom/client";
+import "./globals.css";
+import "./neander-design-pack/notion/0.1.0/pack.css";
+import "./wiki.css";
+import App from "./App";
+createRoot(document.getElementById("root")!).render(<App/>);

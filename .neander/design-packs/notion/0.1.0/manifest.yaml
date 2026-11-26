@@ -1,0 +1,625 @@
+{
+  "schema_version": 2,
+  "id": "notion",
+  "version": "0.1.0",
+  "name": "Notion-inspired document workspace framework",
+  "status": "reference-pilot",
+  "adapter": "react",
+  "application_contract": {
+    "required_layout_import": "NotionFramework"
+  },
+  "purpose": "A document workspace with nested pages, structured block editing, workspace workflows, nine database layouts, linked views and record peeks. Hosts own authorization, records, query/computed values, connected services and persistence.",
+  "select_for": [
+    "Document workspaces with nested pages and a block editor",
+    "Knowledge bases with a Notion-inspired sidebar and page canvas"
+  ],
+  "avoid_for": [
+    "Database-first table or kanban products",
+    "Products preserving an established design system",
+    "Issue trackers and appointment scheduling"
+  ],
+  "routing": {
+    "primary_terms": [
+      "notion-inspired workspace",
+      "notion-style document editor",
+      "block editor workspace",
+      "research knowledge base"
+    ],
+    "workflow_terms": [
+      "organize nested pages",
+      "write documents",
+      "edit knowledge pages",
+      "knowledge base"
+    ],
+    "visual_terms": [
+      "nested page sidebar",
+      "wide page canvas",
+      "quiet document toolbar",
+      "slash command menu"
+    ],
+    "minimum_visual_matches": 2,
+    "exclude_terms": [
+      "existing design system",
+      "issue tracker",
+      "appointment scheduling",
+      "crm"
+    ]
+  },
+  "resources": {
+    "tokens": "tokens.json",
+    "skill": "SKILL.md",
+    "patterns": [
+      "patterns/navigation.md",
+      "patterns/layouts.md",
+      "patterns/interactions.md",
+      "patterns/states.md"
+    ],
+    "react_entry": "components/react/Preview.tsx",
+    "react_styles": "components/react/pack.css",
+    "react_token_styles": "components/react/tokens.css",
+    "react_readme": "components/react/README.md",
+    "routing_evals": "evals/routing.json",
+    "ui_evals": "evals/scenarios.json",
+    "fidelity_audit": "evals/fidelity.md",
+    "quality_evidence": "evals/quality.json",
+    "build_brief": "plan/brief.json",
+    "component_inventory": "plan/components.json",
+    "handoff": "HANDOFF.md",
+    "build_checklist": "CHECKLIST.md",
+    "generation_evals": "evals/generation.json",
+    "foundation_contract": "foundation.json",
+    "surface_inventory": "SURFACE_INVENTORY.md",
+    "react_blocks": [
+      "components/react/NotionPrimitives.tsx",
+      "components/react/NotionIconPicker.tsx",
+      "components/react/NotionDatabase.tsx",
+      "components/react/NotionChrome.tsx",
+      "components/react/NotionShare.tsx",
+      "components/react/NotionPageMenu.tsx",
+      "components/react/NotionRichText.tsx",
+      "components/react/NotionFramework.tsx",
+      "components/react/ui/avatar.tsx",
+      "components/react/ui/button.tsx",
+      "components/react/ui/checkbox.tsx",
+      "components/react/ui/command.tsx",
+      "components/react/ui/dialog.tsx",
+      "components/react/ui/dropdown-menu.tsx",
+      "components/react/ui/input.tsx",
+      "components/react/ui/popover.tsx",
+      "components/react/ui/separator.tsx",
+      "components/react/ui/switch.tsx",
+      "components/react/ui/table.tsx",
+      "components/react/ui/tabs.tsx",
+      "components/react/ui/textarea.tsx",
+      "components/react/ui/theme.tsx",
+      "components/react/ui/tooltip.tsx",
+      "components/react/ui/utils.ts",
+      "components/react/ui/icons.ts",
+      "components/react/NotionNavigation.tsx",
+      "components/react/NotionSortable.tsx",
+      "components/react/NotionLibrary.tsx",
+      "components/react/NotionChat.tsx",
+      "components/react/NotionMeeting.tsx",
+      "components/react/NotionDashboard.tsx",
+      "components/react/NotionAgentSettings.tsx",
+      "components/react/ui/chart.tsx",
+      "components/react/NotionPageEditor.tsx",
+      "components/react/NotionDatabaseControls.tsx",
+      "components/react/consistency.css",
+      "components/react/NotionTrash.tsx",
+      "components/react/NotionNavigationGuard.tsx",
+      "components/react/NotionSettings.tsx",
+      "components/react/NotionInbox.tsx",
+      "components/react/NotionDiscussions.tsx",
+      "components/react/NotionVersionHistory.tsx",
+      "components/react/NotionDatabaseViews.tsx",
+      "components/react/NotionDatabaseViewMenu.tsx",
+      "components/react/NotionDatabaseForm.tsx",
+      "components/react/NotionSelect.tsx",
+      "components/react/ui/select.tsx",
+      "components/react/NotionBlockContent.tsx",
+      "components/react/NotionHome.tsx",
+      "components/react/NotionTemplates.tsx",
+      "components/react/NotionPageCover.tsx",
+      "components/react/workflows.css",
+      "components/react/NotionBoard.tsx",
+      "components/react/NotionSettingsSections.tsx",
+      "components/react/NotionDatabaseQuery.tsx",
+      "components/react/NotionDatabaseTable.tsx",
+      "components/react/NotionTimelineRange.tsx",
+      "components/react/NotionPreferences.tsx",
+      "components/react/NotionContentImport.ts",
+      "components/react/NotionDatabaseSorts.tsx",
+      "components/react/NotionSimpleTable.tsx",
+      "components/react/NotionEquation.tsx",
+      "components/react/NotionTimeline.tsx",
+      "components/react/NotionChoicePicker.tsx",
+      "components/react/NotionTeamspaces.tsx",
+      "components/react/NotionDatabaseState.tsx",
+      "components/react/NotionImport.tsx",
+      "components/react/NotionDocumentContext.tsx",
+      "components/react/NotionNestedBlocks.tsx",
+      "components/react/NotionSyncedBlock.tsx",
+      "components/react/NotionBlockSelection.tsx",
+      "components/react/NotionTimelineDependencies.tsx",
+      "components/react/NotionChartColors.ts",
+      "components/react/NotionPageStarters.tsx",
+      "components/react/NotionChartData.ts",
+      "components/react/NotionDatabaseChart.tsx",
+      "components/react/NotionChartSettings.tsx",
+      "components/react/NotionFormSharing.tsx",
+      "components/react/NotionPublicDatabaseForm.tsx",
+      "components/react/NotionFormModel.ts",
+      "components/react/NotionFormDesigner.tsx",
+      "components/react/NotionPropertyValue.tsx",
+      "components/react/NotionFormQuestionOptions.tsx",
+      "components/react/NotionFormBranchEditor.tsx",
+      "components/react/NotionFormChoices.tsx",
+      "components/react/NotionRichColorMenu.tsx"
+    ],
+    "application_blocks": [
+      "components/react/NotionPrimitives.tsx",
+      "components/react/NotionIconPicker.tsx",
+      "components/react/NotionDatabase.tsx",
+      "components/react/NotionChrome.tsx",
+      "components/react/NotionShare.tsx",
+      "components/react/NotionPageMenu.tsx",
+      "components/react/NotionRichText.tsx",
+      "components/react/NotionFramework.tsx",
+      "components/react/tokens.css",
+      "components/react/pack.css",
+      "components/react/ui/LICENSE.md",
+      "components/react/ui/avatar.tsx",
+      "components/react/ui/button.tsx",
+      "components/react/ui/checkbox.tsx",
+      "components/react/ui/command.tsx",
+      "components/react/ui/dialog.tsx",
+      "components/react/ui/dropdown-menu.tsx",
+      "components/react/ui/foundation.css",
+      "components/react/ui/input.tsx",
+      "components/react/ui/popover.tsx",
+      "components/react/ui/separator.tsx",
+      "components/react/ui/switch.tsx",
+      "components/react/ui/table.tsx",
+      "components/react/ui/tabs.tsx",
+      "components/react/ui/textarea.tsx",
+      "components/react/ui/theme.tsx",
+      "components/react/ui/tooltip.tsx",
+      "components/react/ui/upstream.json",
+      "components/react/ui/utils.ts",
+      "components/react/ui/icons.ts",
+      "components/react/NotionNavigation.tsx",
+      "components/react/NotionSortable.tsx",
+      "components/react/workspace.css",
+      "components/react/navigation.css",
+      "components/react/sortable.css",
+      "components/react/NotionLibrary.tsx",
+      "components/react/NotionChat.tsx",
+      "components/react/NotionMeeting.tsx",
+      "components/react/NotionDashboard.tsx",
+      "components/react/NotionAgentSettings.tsx",
+      "components/react/surfaces.css",
+      "components/react/typography.css",
+      "components/react/ui/chart.tsx",
+      "components/react/NotionPageEditor.tsx",
+      "components/react/NotionDatabaseControls.tsx",
+      "components/react/consistency.css",
+      "components/react/NotionTrash.tsx",
+      "components/react/NotionNavigationGuard.tsx",
+      "components/react/NotionSettings.tsx",
+      "components/react/NotionInbox.tsx",
+      "components/react/NotionDiscussions.tsx",
+      "components/react/NotionVersionHistory.tsx",
+      "components/react/NotionDatabaseViews.tsx",
+      "components/react/NotionDatabaseViewMenu.tsx",
+      "components/react/NotionDatabaseForm.tsx",
+      "components/react/NotionSelect.tsx",
+      "components/react/ui/select.tsx",
+      "components/react/NotionBlockContent.tsx",
+      "components/react/NotionHome.tsx",
+      "components/react/NotionTemplates.tsx",
+      "components/react/NotionPageCover.tsx",
+      "components/react/workflows.css",
+      "components/react/NotionBoard.tsx",
+      "components/react/NotionSettingsSections.tsx",
+      "components/react/NotionDatabaseQuery.tsx",
+      "components/react/NotionDatabaseTable.tsx",
+      "components/react/NotionTimelineRange.tsx",
+      "components/react/NotionPreferences.tsx",
+      "components/react/NotionContentImport.ts",
+      "components/react/NotionDatabaseSorts.tsx",
+      "components/react/NotionSimpleTable.tsx",
+      "components/react/NotionEquation.tsx",
+      "components/react/NotionTimeline.tsx",
+      "components/react/NotionChoicePicker.tsx",
+      "components/react/NotionTeamspaces.tsx",
+      "components/react/NotionDatabaseState.tsx",
+      "components/react/NotionImport.tsx",
+      "components/react/NotionDocumentContext.tsx",
+      "components/react/NotionNestedBlocks.tsx",
+      "components/react/NotionSyncedBlock.tsx",
+      "components/react/NotionBlockSelection.tsx",
+      "components/react/NotionBlockBranches.ts",
+      "components/react/NotionTimelineDependencies.tsx",
+      "components/react/NotionChartColors.ts",
+      "components/react/NotionPageStarters.tsx",
+      "components/react/NotionChartData.ts",
+      "components/react/NotionDatabaseChart.tsx",
+      "components/react/NotionChartSettings.tsx",
+      "components/react/NotionFormSharing.tsx",
+      "components/react/NotionPublicDatabaseForm.tsx",
+      "components/react/NotionFormModel.ts",
+      "components/react/NotionFormDesigner.tsx",
+      "components/react/NotionPropertyValue.tsx",
+      "components/react/NotionFormQuestionOptions.tsx",
+      "components/react/NotionFormBranchEditor.tsx",
+      "components/react/NotionFormChoices.tsx",
+      "components/react/NotionRichColorMenu.tsx"
+    ],
+    "foundation_catalog": "components/react/NotionFoundationCatalog.tsx",
+    "upstream_sources": "components/react/ui/upstream.json",
+    "upstream_license": "components/react/ui/LICENSE.md",
+    "reference_preview": "components/react/NotionReferencePreview.tsx",
+    "reference_assets": "components/react/NotionReferenceAssets.ts",
+    "visual_review": "design-qa.md",
+    "reference_state": "components/react/NotionReferenceState.ts",
+    "reference_workspace": "components/react/NotionReferenceWorkspace.tsx",
+    "reference_computation": "components/react/NotionReferenceComputed.ts",
+    "reference_timeline": "components/react/NotionReferenceTimeline.tsx",
+    "reference_form": "components/react/NotionReferenceForm.tsx",
+    "reference_form_state": "components/react/NotionReferenceFormState.ts"
+  },
+  "preview_screens": [
+    {
+      "id": "page",
+      "label": "Page editor",
+      "theme": "light",
+      "variant": "catalog fixture",
+      "reference": "Public Notion help; pixel reference pending"
+    },
+    {
+      "id": "empty",
+      "label": "Empty page",
+      "theme": "light",
+      "variant": "catalog fixture",
+      "reference": "Public Notion help; pixel reference pending"
+    },
+    {
+      "id": "dark",
+      "label": "Dark page",
+      "theme": "dark",
+      "variant": "inferred catalog fixture",
+      "reference": "Dark screenshot pending"
+    },
+    {
+      "id": "database",
+      "label": "Database table and board",
+      "theme": "light",
+      "variant": "catalog fixture",
+      "reference": "Public Notion database help; pixel reference pending"
+    },
+    {
+      "id": "rejected",
+      "label": "Rejected host actions",
+      "theme": "light",
+      "variant": "catalog fixture",
+      "reference": "Host rejection behavior, not a visual reference"
+    },
+    {
+      "id": "foundation",
+      "label": "Shared controls",
+      "theme": "light",
+      "variant": "source component catalog",
+      "reference": "Canonical shadcn sources with pack theme; user-supplied Notion references"
+    },
+    {
+      "id": "foundation-dark",
+      "label": "Shared controls \u00b7 dark",
+      "theme": "dark",
+      "variant": "source component catalog",
+      "reference": "Dark foundation consistency; matched Notion dark reference pending"
+    },
+    {
+      "id": "navigation",
+      "label": "Navigation reference",
+      "theme": "light",
+      "variant": "user screenshot reference fixture",
+      "reference": "User navigation screenshot, November 2, 2026; normalized to 270px sidebar and 14px labels"
+    },
+    {
+      "id": "notion-page",
+      "label": "Mobbin \u00b7 Document",
+      "theme": "light",
+      "variant": "source-matched reference composition",
+      "reference": "User-supplied Mobbin Notion web export, normalized to 1512x945 CSS pixels; UI fixture, no connected services"
+    },
+    {
+      "id": "document-chat",
+      "label": "Mobbin \u00b7 Document and AI sidebar",
+      "theme": "light",
+      "variant": "source-matched reference composition",
+      "reference": "User-supplied Mobbin Notion web export, normalized to 1512x945 CSS pixels; UI fixture, no connected services"
+    },
+    {
+      "id": "library",
+      "label": "Mobbin \u00b7 Library",
+      "theme": "light",
+      "variant": "source-matched reference composition",
+      "reference": "User-supplied Mobbin Notion web export, normalized to 1512x945 CSS pixels; UI fixture, no connected services"
+    },
+    {
+      "id": "chat",
+      "label": "Mobbin \u00b7 AI chat",
+      "theme": "light",
+      "variant": "source-matched reference composition",
+      "reference": "User-supplied Mobbin Notion web export, normalized to 1512x945 CSS pixels; UI fixture, no connected services"
+    },
+    {
+      "id": "meeting",
+      "label": "Mobbin \u00b7 Meeting notes",
+      "theme": "light",
+      "variant": "source-matched reference composition",
+      "reference": "User-supplied Mobbin Notion web export, normalized to 1512x945 CSS pixels; UI fixture, no connected services"
+    },
+    {
+      "id": "dashboard",
+      "label": "Mobbin \u00b7 Dashboard",
+      "theme": "light",
+      "variant": "source-matched reference composition",
+      "reference": "User-supplied Mobbin Notion web export, normalized to 1512x945 CSS pixels; UI fixture, no connected services"
+    },
+    {
+      "id": "agent-settings",
+      "label": "Mobbin \u00b7 Agent workbench",
+      "theme": "light",
+      "variant": "source-matched reference composition",
+      "reference": "User-supplied Mobbin Notion web export, normalized to 1512x945 CSS pixels; UI fixture, no connected services"
+    },
+    {
+      "id": "home",
+      "label": "Workspace home",
+      "theme": "light",
+      "variant": "connected reference workflow",
+      "reference": "Mobbin Notion web flows, reviewed 2026-11-03; host-service execution is separate"
+    },
+    {
+      "id": "settings",
+      "label": "Workspace and account settings",
+      "theme": "light",
+      "variant": "connected reference workflow",
+      "reference": "Mobbin Notion web flows, reviewed 2026-11-03; host-service execution is separate"
+    },
+    {
+      "id": "inbox",
+      "label": "Sidebar Inbox",
+      "theme": "light",
+      "variant": "connected reference workflow",
+      "reference": "Mobbin Notion web flows, reviewed 2026-11-03; host-service execution is separate"
+    },
+    {
+      "id": "templates",
+      "label": "Resources and templates",
+      "theme": "light",
+      "variant": "connected reference workflow",
+      "reference": "Mobbin Notion web flows, reviewed 2026-11-03; host-service execution is separate"
+    },
+    {
+      "id": "comments",
+      "label": "Page discussions",
+      "theme": "light",
+      "variant": "connected reference workflow",
+      "reference": "Mobbin Notion web flows, reviewed 2026-11-03; host-service execution is separate"
+    },
+    {
+      "id": "history",
+      "label": "Page version history",
+      "theme": "light",
+      "variant": "connected reference workflow",
+      "reference": "Mobbin Notion web flows, reviewed 2026-11-03; host-service execution is separate"
+    },
+    {
+      "id": "database-views",
+      "label": "Database workflows",
+      "theme": "light",
+      "variant": "connected reference workflow",
+      "reference": "Mobbin Notion web flows, reviewed 2026-11-03; host-service execution is separate"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.notion.com/help/navigate-with-the-sidebar",
+      "role": "Current sidebar behavior and navigation structure"
+    },
+    {
+      "url": "https://www.notion.com/help/create-your-first-page",
+      "role": "Page creation and slash command behavior"
+    },
+    {
+      "url": "https://www.notion.com/help/views-filters-and-sorts",
+      "role": "Database table and board view behavior"
+    },
+    {
+      "url": "https://mobbin.com/screens/ff1d684c-08e6-454d-af4c-f0d0d57e6308",
+      "role": "Mobbin Notion web screen reference, researched 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/41ffb1f0-3828-452f-ac0b-520f84322668",
+      "role": "Mobbin Notion web screen reference, researched 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/fbc30f35-7e02-43fb-875d-f1a4b8eba372",
+      "role": "Mobbin Notion web screen reference, researched 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/fa0f3ae6-c4cc-432f-87ba-77e66f63146e",
+      "role": "Mobbin Notion web screen reference, researched 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/f63163ee-9eaa-4c17-9095-9e00d896a659",
+      "role": "Mobbin Notion web screen reference, researched 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/flows/f2a19460-af5f-47d9-a45d-acb8364f9c74",
+      "role": "Notion web database creation and Team table workflow, reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/8859ba39-fc79-499d-a756-0085c2bf502f",
+      "role": "Notion database layout options and Open pages in Side peek, reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/fb9142f9-c78f-4f2b-82a0-f3e35fb94ec1",
+      "role": "Notion Team table property menu and row density, reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/1ad05716-44a3-48d5-9150-5780546dd323",
+      "role": "Notion workspace search and result preview; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/974d66d2-eeb3-434f-b904-1e58baa8659a",
+      "role": "Notion grouped AI Meeting Notes library; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/fffb95e6-b486-471e-936a-fdfec96f1039",
+      "role": "Notion table property menu; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/427fb870-9f77-4075-b78b-d465925bcbc8",
+      "role": "Notion Publish tab; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/3955648d-fb91-41a3-bf3c-104fafc888b8",
+      "role": "Notion older Trash popover structure and restore interaction; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/flows/93c259c6-f723-4173-93b3-de2da09b337f",
+      "role": "Account/workspace settings flow; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/flows/abbb9a37-8ff5-4b95-a745-634a99cd2d36",
+      "role": "Sidebar Inbox flow; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/flows/6148b310-2a61-47a1-bfdf-1caea8ab5133",
+      "role": "Database layout switching; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/flows/de3a1ad5-80d5-46bb-8bab-b2efd6e364ac",
+      "role": "Version history preview/restore; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/flows/cb1f904a-8674-4b22-8793-bd431804a75b",
+      "role": "Older Home pattern; current sidebar retained; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/flows/9a81f8bb-86fc-47f9-862e-d7e57f337cb4",
+      "role": "Database form builder; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/flows/69c8c53a-872b-44cd-b408-da157df4f1f7",
+      "role": "Multi-select properties; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/d197acab-453b-4c1b-b46f-87ef523f814d",
+      "role": "Page discussions rail; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/fed35388-895f-480a-b2fd-0dc0a671b266",
+      "role": "Resource/template gallery; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/screens/cbf5b766-ae76-4189-8ab8-5389e706c7a4",
+      "role": "Code block; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/flows/d45cfda2-72b0-4813-bb5b-f79eb72145d2",
+      "role": "Notion formula-property configuration, older source state; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/flows/4cff28d1-7c52-4520-ae0b-5fc6893b63de",
+      "role": "Notion block conversion and preserved content; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/flows/06df3efc-0e15-408f-8be2-8e258b48966b",
+      "role": "Notion timeline creation/range layout pattern; reviewed 2026-11-03"
+    },
+    {
+      "url": "https://mobbin.com/flows/ac5ccd67-d05f-4809-851d-9081ee61fa0e",
+      "role": "Simple table column creation and populated table; reviewed 2026-11-04"
+    },
+    {
+      "url": "https://mobbin.com/flows/04e24ea6-33df-46f4-92d7-d5de8ddfe46c",
+      "role": "Ordered database sorts and sort rule controls; reviewed 2026-11-04"
+    },
+    {
+      "url": "https://mobbin.com/flows/d562f822-7b5a-4e7b-aff9-0f8e6140856e",
+      "role": "Inline equation conversion and expression editor; reviewed 2026-11-04"
+    },
+    {
+      "url": "https://mobbin.com/flows/f1c20020-58f9-49fd-9432-4b1a6727f85d",
+      "role": "Selected text formatting; reviewed 2026-11-04"
+    },
+    {
+      "url": "https://mobbin.com/flows/7754fda0-5f4b-484d-b950-44fc7f5b64bb",
+      "role": "Chat primary tab, agent shortcuts and grouped conversation history; reviewed 2026-11-04"
+    },
+    {
+      "url": "https://mobbin.com/flows/f2b8fe8d-b4f1-40be-8d01-afa341acbfbb",
+      "role": "Meetings primary tab, calendar prompt and grouped note navigation; reviewed 2026-11-04"
+    },
+    {
+      "url": "https://mobbin.com/screens/fb444dc7-3d55-4361-8c3a-f23d9d285096",
+      "role": "Notion emoji picker visual-state reference, reviewed 2026-11-05"
+    },
+    {
+      "url": "https://mobbin.com/screens/9aed23d0-f039-4685-aeb1-8a0f81628796",
+      "role": "Dark database and typed choice/status colors, reviewed 2026-11-05"
+    },
+    {
+      "url": "https://mobbin.com/flows/1d58858c-552d-4529-b052-7f97e73eb620",
+      "role": "Chart type, axis/style configuration and donut reference, reviewed 2026-11-05"
+    },
+    {
+      "url": "https://mobbin.com/flows/79aa3724-322c-45bd-b248-58d48b50ac95",
+      "role": "Page sharing and invitation states, reviewed 2026-11-05"
+    },
+    {
+      "url": "https://mobbin.com/screens/d138214d-5351-4bd6-a2bb-c7b3648ea6a5",
+      "role": "Dark Preferences density, controls and destination icons, reviewed 2026-11-05"
+    },
+    {
+      "url": "https://mobbin.com/flows/1d197223-0d60-4631-8504-20594366e4ba",
+      "role": "Chart color family menu, swatches and shade plot, reviewed 2026-11-05"
+    },
+    {
+      "url": "https://mobbin.com/screens/e4e12e4b-a7eb-4e47-a491-502fa8c06b11",
+      "role": "Blank document title and bottom starter row, reviewed 2026-11-05"
+    },
+    {
+      "url": "https://mobbin.com/flows/e268c8dd-b4ce-4250-a096-a872b25f95ac",
+      "role": "Current navigation and empty-page creation states, reviewed 2026-11-05"
+    }
+  ],
+  "reference_note": "Mobbin and user-provided Notion desktop exports ground the light theme, current navigation, reference compositions, dark database choices, chart configuration and sharing states. Matched reviews use a 1512x945 app region. Exact whole-product, all dark/native states, private glyphs and connected-service parity are not certified.",
+  "css_prefix": "notion",
+  "npm_dependencies": {
+    "cmdk": "^1.1.1",
+    "radix-ui": "1.6.2",
+    "lucide-react": "1.23.0",
+    "class-variance-authority": "0.7.1",
+    "@dnd-kit/core": "6.3.1",
+    "@dnd-kit/sortable": "10.0.0",
+    "@dnd-kit/utilities": "3.2.2",
+    "recharts": "3.3.0",
+    "@fontsource/inter": "5.3.0",
+    "katex": "0.19.1",
+    "@types/katex": "0.16.8"
+  },
+  "shadcn_registry": {
+    "item_name": "notion-framework-0-1-0",
+    "title": "Notion-inspired Document Framework"
+  },
+  "foundation": {
+    "id": "shadcn",
+    "version": "1.0.0"
+  }
+}

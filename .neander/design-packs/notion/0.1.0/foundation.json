@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "root_class": "notion-pack",
+  "shared_components": {
+    "buttons": [
+      "NotionButton"
+    ],
+    "navigation": [
+      "NotionFramework",
+      "NotionSidebar",
+      "NotionPageChrome",
+      "NotionSearch",
+      "NotionNavigation"
+    ],
+    "overlays": [
+      "NotionSearch",
+      "NotionBlockMenu",
+      "NotionBlockActions",
+      "NotionPageMenu",
+      "NotionIconPicker",
+      "NotionSharePopover",
+      "NotionSettings",
+      "NotionVersionHistory"
+    ],
+    "editor": [
+      "NotionFramework",
+      "NotionRichText"
+    ],
+    "data_display": [
+      "NotionDatabase",
+      "NotionLibrary",
+      "NotionDashboard",
+      "ChartContainer",
+      "NotionDatabaseAlternateView",
+      "NotionDatabaseForm",
+      "NotionHome",
+      "NotionInbox",
+      "NotionTemplates",
+      "NotionDiscussions"
+    ],
+    "sorting": [
+      "NotionSortList",
+      "NotionSortItem"
+    ]
+  },
+  "shadcn_foundation": {
+    "release": "shadcn@2.1.8",
+    "commit": "9253b43f29e6f54e20e7d2e10647f0755753f6b0",
+    "provenance": "components/react/ui/upstream.json",
+    "license": "components/react/ui/LICENSE.md",
+    "components": [
+      "Button",
+      "Input",
+      "Textarea",
+      "Popover",
+      "Command",
+      "DropdownMenu",
+      "Tabs",
+      "Tooltip",
+      "Avatar",
+      "Checkbox",
+      "Switch",
+      "Separator",
+      "Dialog",
+      "Table",
+      "Chart",
+      "Select"
+    ],
+    "adaptations": [
+      "Local consolidated Radix imports",
+      "Notion scoped CSS replaces Tailwind utilities",
+      "Shared portal theme context",
+      "Notion button/input variants",
+      "Chart theme selector namespacing and Recharts 3 content types"
+    ]
+  },
+  "isolation": {
+    "root": ".notion-pack",
+    "portals": "[data-ui-pack=notion]",
+    "global_selectors": false,
+    "selected_pack_stylesheet_only": true
+  },
+  "evidence": "Source-level guardrails and cross-pack browser isolation checks cover the root, search, and page menus.",
+  "implementation_status": "Pinned official shadcn New York source adaptation with React 18 refs; product compositions share this foundation.",
+  "theme_contract": {
+    "tokens": "tokens.json generates tokens.css for roots and portals",
+    "controls": "ui/foundation.css owns common control variants and states",
+    "compositions": "workspace.css, navigation.css, sortable.css and surfaces.css behind one pack.css entry; typography.css self-hosts a uniquely named font family",
+    "portals": "NotionThemeProvider; ui content marks the active pack and theme automatically",
+    "catalog": [
+      "foundation",
+      "foundation-dark"
+    ]
+  }
+}

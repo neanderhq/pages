@@ -1,0 +1,3 @@
+# Vite's prebuilt platform packages do not need package lifecycle execution.
+allowBuilds:
+  esbuild: false

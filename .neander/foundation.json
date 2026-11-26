@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "foundation_id": "shadcn",
+  "foundation_version": "1.0.0",
+  "status": "ready",
+  "profile": "react-vite",
+  "theme": {
+    "accent": "#2563eb",
+    "mood": "neutral"
+  },
+  "theme_pending": false,
+  "css_seed_sha256": "5baa7696b2cb96c537d531348f11e11c9673718e4af8a49e16f84b8734866741",
+  "adjustments": [
+    "Dark interactive accent adjusted from #2563eb to #608df0 for contrast; brand-accent retains the requested color."
+  ],
+  "foundation_exception": null
+}

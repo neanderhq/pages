@@ -1,0 +1,67 @@
+@media print {
+  .pw-backlinks,
+  .pw-editor > .pw-page-tools,
+  .pw-editor > .wiki-notice,
+  .pw-editor-loading,
+  .pw-page button:not([role="checkbox"]),
+  .bn-toolbar,
+  .bn-side-menu,
+  .bn-suggestion-menu,
+  .bn-panel,
+  .bn-table-handle,
+  .bn-table-cell-handle,
+  .bn-extend-button,
+  .pw-editor .bn-resize-handle,
+  .pw-editor .bn-add-file-button {
+    display: none !important;
+  }
+  .pw-editor .bn-block-content:has(.ProseMirror-trailingBreak:only-child)::after {
+    content: none !important;
+  }
+  .pw-title input::placeholder { color: transparent !important; }
+  .pw-editor .bn-editor,
+  .pw-editor .bn-block-group,
+  .pw-editor .bn-block-outer,
+  .pw-editor .bn-block,
+  .pw-editor .bn-block-content,
+  .pw-editor [data-content-type="table"],
+  .pw-editor .tableWrapper {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    break-inside: auto !important;
+  }
+  .pw-editor img {
+    max-width: 100% !important;
+    max-height: 240mm !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+    break-inside: avoid;
+  }
+  .pw-editor .bn-editor [data-content-type="table"] table {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse;
+    overflow: visible !important;
+    break-inside: auto !important;
+  }
+  .pw-editor col { width: auto !important; min-width: 0 !important; }
+  .pw-editor :is(th, td) {
+    min-width: 0 !important;
+    width: auto !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word;
+    border: 1px solid #777;
+  }
+  .pw-editor thead { display: table-header-group; }
+  .pw-editor tr { break-inside: avoid; }
+  .pw-editor :is(th, td) > * { min-width: 0 !important; max-width: 100% !important; }
+  .pw-editor [data-content-type="image"],
+  .pw-editor .bn-visual-media-wrapper { min-width: 0 !important; max-width: 100% !important; }
+}
