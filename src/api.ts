@@ -2,6 +2,11 @@ export class ApiError extends Error {
   status: number;
   constructor(message: string, status: number) { super(message); this.status = status; }
 }
+// Identifiers occupy one path segment, never a route, query or fragment.
+export function apiPathSegment(value: string): string {
+  if (value === "." || value === "..") throw new ApiError("Invalid resource identifier.", 400);
+  return encodeURIComponent(value);
+}
 export async function api<Type>(path: string, method = "GET", body?: unknown): Promise<Type> {
   let response: Response;
   try { response = await fetch(path, { method, credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: body === undefined ? undefined : JSON.stringify(body) }); }

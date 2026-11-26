@@ -1,4 +1,4 @@
-import { api } from "./api.ts";
+import { api, apiPathSegment } from "./api.ts";
 import type { Block, Review } from "./pagesApi";
 
 export const commentsChanged = "wiki-comments-changed";
@@ -65,17 +65,17 @@ export type SearchFilters = { q?: string; ownerId?: string; spaceId?: string; ta
 export type AuditEvent = { id: string; actorId: string; actorName: string; action: string; target: string; targetLabel: string | null; timestamp: string };
 
 export function collabApi(companyId: string) {
-  const base = `/api/companies/${encodeURIComponent(companyId)}`;
-  const page = (id: string) => `${base}/pages/${encodeURIComponent(id)}`;
-  const thread = (id: string, threadId: string) => `${page(id)}/comments/${encodeURIComponent(threadId)}`;
+  const base = `/api/companies/${apiPathSegment(companyId)}`;
+  const page = (id: string) => `${base}/pages/${apiPathSegment(id)}`;
+  const thread = (id: string, threadId: string) => `${page(id)}/comments/${apiPathSegment(threadId)}`;
   return {
     comments: (id: string) => api<{ threads: Thread[] }>(`${page(id)}/comments`),
     mentionMembers: (id: string, query: string, limit = 8) => api<{ members: MentionMember[] }>(`${page(id)}/comments/mentions?q=${encodeURIComponent(query)}&limit=${limit}`),
     comment: (id: string, body: string, anchor?: Anchor) => api<{ id: string; anchorStatus: string | null }>(`${page(id)}/comments`, "POST", anchor ? { body, kind: "inline", anchor } : { body }),
     reply: (id: string, threadId: string, body: string) => api<{ id: string }>(`${thread(id, threadId)}/replies`, "POST", { body }),
     resolve: (id: string, threadId: string, resolved: boolean) => api<{ ok: true }>(`${thread(id, threadId)}/${resolved ? "resolve" : "reopen"}`, "POST", {}),
-    editMessage: (id: string, threadId: string, messageId: string, body: string) => api<{ ok: true }>(`${thread(id, threadId)}/messages/${encodeURIComponent(messageId)}`, "PATCH", { body }),
-    deleteMessage: (id: string, threadId: string, messageId: string) => api<{ ok: true }>(`${thread(id, threadId)}/messages/${encodeURIComponent(messageId)}`, "DELETE", {}),
+    editMessage: (id: string, threadId: string, messageId: string, body: string) => api<{ ok: true }>(`${thread(id, threadId)}/messages/${apiPathSegment(messageId)}`, "PATCH", { body }),
+    deleteMessage: (id: string, threadId: string, messageId: string) => api<{ ok: true }>(`${thread(id, threadId)}/messages/${apiPathSegment(messageId)}`, "DELETE", {}),
     revisions: (id: string) => api<{ revisions: RevisionRow[] }>(`${page(id)}/revisions`),
     revision: (id: string, n: number) => api<{ revision: { revision: number; content: Block[]; authorId: string; createdAt: string } }>(`${page(id)}/revisions/${n}`),
     restoreRevision: (id: string, n: number) => api<{ revision: number; restoredFrom: number; content: Block[] }>(`${page(id)}/revisions/${n}/restore`, "POST", {}),
@@ -95,8 +95,8 @@ export function collabApi(companyId: string) {
     reviewDue: (mine = false) => api<{ pages: ReviewDuePage[] }>(`${base}/review-due${mine ? "?mine=1" : ""}`),
     notifications: () => api<{ notifications: Notification[]; unread: number }>(`${base}/notifications`),
     auditLog: (offset = 0, limit = 25) => api<{ events: AuditEvent[]; total: number; limit: number; offset: number }>(`${base}/audit-log?${new URLSearchParams({ offset: String(offset), limit: String(limit) })}`),
-    retryNotificationEmail: (id: string) => api<{ ok: boolean; emailStatus: Notification["emailStatus"]; emailError: string | null }>(`${base}/notifications/${encodeURIComponent(id)}/retry-email`, "POST", {}),
-    markNotificationRead: (id: string) => api<{ ok: true }>(`${base}/notifications/${encodeURIComponent(id)}/read`, "POST", {}),
+    retryNotificationEmail: (id: string) => api<{ ok: boolean; emailStatus: Notification["emailStatus"]; emailError: string | null }>(`${base}/notifications/${apiPathSegment(id)}/retry-email`, "POST", {}),
+    markNotificationRead: (id: string) => api<{ ok: true }>(`${base}/notifications/${apiPathSegment(id)}/read`, "POST", {}),
     markAllNotificationsRead: () => api<{ ok: true; unread: number }>(`${base}/notifications/read-all`, "POST", {}),
   };
 }

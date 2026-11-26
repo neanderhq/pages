@@ -110,6 +110,13 @@ test("page tool clients send template destinations, backlink navigation IDs and 
       await client.create({ templateId: template.id, parentId: "editable-parent", spaceId: "destination-space" });
       assert.deepEqual(requests.at(-1)?.body, { templateId: template.id, parentId: "editable-parent", spaceId: "destination-space" });
     }
+    await client.page("../auth/sign-out?role=admin#fragment");
+    assert.match(requests.at(-1)!.path, /pages\/\.\.%2Fauth%2Fsign-out%3Frole%3Dadmin%23fragment$/);
+    const beforeInvalidId = requests.length;
+    assert.throws(() => client.page(".."), /Invalid resource identifier/);
+    assert.throws(() => client.page("."), /Invalid resource identifier/);
+    assert.throws(() => collabApi("..").comments("page"), /Invalid resource identifier/);
+    assert.equal(requests.length, beforeInvalidId, "dot segments never become authenticated requests");
     const backlinks = await collab.backlinks("target / page");
     assert.equal(backlinks.pages[0].id, "source-page");
     assert.match(requests.at(-1)!.path, /pages\/target%20%2F%20page\/backlinks$/);
