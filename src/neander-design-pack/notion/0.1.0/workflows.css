@@ -1,0 +1,589 @@
+/* Optional workspace workflows use the same scoped control and motion foundation. */
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-cell-person{display:inline-flex;gap:var(--notion-space-2);align-items:center;font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-cell-person .notion-ui-avatar{width:20px;height:20px;font-size:10px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-card{border:1px solid var(--notion-border);border-radius:var(--notion-radius-control);background:var(--notion-canvas);box-shadow:0 1px 2px var(--notion-border);margin:var(--notion-space-1) 0;padding-bottom:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-properties{display:grid;justify-items:start;gap:var(--notion-space-1);padding:0 var(--notion-space-2);font-size:10px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-card .notion-alternate-record{border:0;box-shadow:none}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-gallery-view .notion-alternate-record{margin:var(--notion-space-2);width:calc(100% - 16px)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-gallery-view .notion-alternate-properties{display:grid;justify-items:start;gap:var(--notion-space-2);padding:0 var(--notion-space-3) var(--notion-space-4)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-gallery-empty-preview{height:150px;background:var(--notion-surface);border-bottom:1px solid var(--notion-border)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-record-chart .notion-database-count-chart{width:100%;height:360px;min-height:300px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-group[data-drop-over="true"]{background:var(--notion-info);outline:1px dashed var(--notion-accent);border-radius:var(--notion-radius-control)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-card{position:relative}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-card .notion-board-card-menu{position:absolute;top:var(--notion-space-1);right:var(--notion-space-1);width:24px;height:24px;min-height:24px;padding:var(--notion-space-1);opacity:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-card:hover .notion-board-card-menu,:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-card:focus-within .notion-board-card-menu{opacity:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-board-preview{padding:var(--notion-space-4);width:240px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-content>label>input{max-width:400px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-nav .notion-ui-avatar{width:18px;height:18px;flex:none}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-editor-icon.notion-editor-icon-compact{width:60px;height:60px;margin:0;padding:var(--notion-space-1)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form{max-width:600px;margin:var(--notion-space-8) auto;padding-bottom:var(--notion-space-8)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form>header{display:flex;justify-content:flex-end;margin-bottom:var(--notion-space-8)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form>h2{font-size:var(--notion-font-view-title);margin-bottom:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form>p{color:var(--notion-muted);font-size:var(--notion-font-small);margin-bottom:var(--notion-space-8)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question{display:grid;gap:var(--notion-space-3);padding:var(--notion-space-4);border:1px solid var(--notion-border);border-radius:var(--notion-radius-card);margin:var(--notion-space-4) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question>div:first-child{display:flex;align-items:center;justify-content:space-between}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form-success{padding:var(--notion-space-8);text-align:center;max-width:600px;margin:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-page-cover{position:relative;width:100%}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-page-cover>img{display:block;width:100%;height:240px;object-fit:cover}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-page-cover-empty{height:0;max-width:704px;margin:0 auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-cover-trigger{position:absolute;bottom:var(--notion-space-3);right:var(--notion-space-4);background:var(--notion-canvas);font-size:var(--notion-font-small);color:var(--notion-muted);opacity:0;z-index:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-page-cover-empty .notion-cover-trigger{top:var(--notion-space-8);bottom:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-canvas:hover .notion-cover-trigger,:is(.notion-pack,[data-ui-pack="notion"]) .notion-cover-trigger:focus-visible,:is(.notion-pack,[data-ui-pack="notion"]) .notion-page-cover:hover .notion-cover-trigger{opacity:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-editor.notion-editor-has-cover{padding-top:var(--notion-space-8)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-cover-picker form{display:grid;gap:var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-cover-picker form>div{display:flex;gap:var(--notion-space-2);flex-wrap:wrap}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-search-filters{display:flex;align-items:center;gap:var(--notion-space-2);padding:var(--notion-space-3);border-bottom:1px solid var(--notion-border);flex-wrap:wrap}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-search-filters>.notion-select-style-1{width:auto;max-width:170px;border:0;font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-search-filters>button[aria-pressed="true"]{background:var(--notion-info);color:var(--notion-info-foreground)}
+[data-ui-pack="notion"].notion-manage-view{width:290px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-manage-view form{display:grid;gap:var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-manage-view label{display:grid;gap:var(--notion-space-1);font-size:var(--notion-font-small);color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-extra-filter{display:flex;align-items:center;gap:var(--notion-space-2);margin:var(--notion-space-2) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-block--quote{border-left:3px solid var(--notion-text);padding-left:var(--notion-space-4);margin:var(--notion-space-3) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-block--numbered{display:flex;gap:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-numbered-marker{min-width:18px;padding-top:var(--notion-space-1)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-block-divider{border:0;border-top:1px solid var(--notion-border);width:100%;margin:var(--notion-space-4) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-code-block{width:100%;background:var(--notion-surface);border-radius:var(--notion-radius-control);padding:var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-code-block header{display:flex;justify-content:space-between;align-items:center}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-code-block header input{width:140px;border:0;background:transparent;color:var(--notion-muted);font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-code-block textarea{border:0;box-shadow:none;font-family:ui-monospace,monospace;font-size:var(--notion-font-small);line-height:1.6;background:transparent;resize:vertical;padding:var(--notion-space-4)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-toggle-block{width:100%}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-toggle-block summary{display:list-item;cursor:pointer}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-toggle-block summary input{display:inline-block;width:calc(100% - 24px);border:0;background:transparent}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-toggle-block>textarea{margin-left:var(--notion-space-6);width:calc(100% - 24px);background:transparent;border-color:var(--notion-border);resize:vertical}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table-scroll{max-width:100%;overflow:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table{border-collapse:collapse;table-layout:fixed;width:100%}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table td{border:1px solid var(--notion-border);padding:0;min-width:110px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table textarea{border:0;min-height:34px;resize:vertical;background:transparent;box-shadow:none;border-radius:0;font-size:var(--notion-font-body)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table-tools{display:flex;gap:var(--notion-space-2);flex-wrap:wrap;padding:var(--notion-space-2) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-column-block{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--notion-space-6);width:100%}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-column-block textarea{border:0;box-shadow:none;resize:vertical;background:transparent;font-size:var(--notion-font-body)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-media-block{margin:var(--notion-space-3) 0;width:100%}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-media-block img,:is(.notion-pack,[data-ui-pack="notion"]) .notion-media-block video{max-width:100%;height:auto;display:block;border-radius:var(--notion-radius-control)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-media-block audio{max-width:100%;width:100%}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-media-block>a{display:flex;align-items:center;gap:var(--notion-space-2);padding:var(--notion-space-4);border:1px solid var(--notion-border);color:var(--notion-text);border-radius:var(--notion-radius-control)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-media-controls{display:flex;align-items:center;gap:var(--notion-space-2);margin:var(--notion-space-2) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-media-controls button{height:var(--notion-control-input-height)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-media-empty{display:flex;gap:var(--notion-space-2);padding:var(--notion-space-4);background:var(--notion-surface);color:var(--notion-muted)}
+[data-ui-pack="notion"].notion-link-dialog{width:min(420px,94vw)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-link-dialog form{display:flex;gap:var(--notion-space-2);flex-wrap:wrap}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-workspace-home{max-width:800px;margin:0 auto;padding:var(--notion-space-8) var(--notion-space-6) 80px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-workspace-home>h1{display:flex;gap:var(--notion-space-3);align-items:center;justify-content:center;font-size:24px;margin:var(--notion-space-8) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-workspace-home>h2{display:flex;align-items:center;gap:var(--notion-space-2);font-size:var(--notion-font-small);font-weight:400;color:var(--notion-muted);margin:var(--notion-space-8) 0 var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-home-composer{border:1px solid var(--notion-border);border-radius:var(--notion-radius-card);box-shadow:0 2px 5px var(--notion-border);padding:var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-home-composer textarea{background:transparent;border:0;box-shadow:none;resize:none;min-height:80px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-home-composer footer{display:flex;justify-content:space-between;align-items:center;color:var(--notion-muted);font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-home-recents{display:flex;gap:var(--notion-space-3);overflow:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-home-recents>button{flex:none;width:120px;height:130px;padding:0;display:flex;align-items:stretch;flex-direction:column;gap:0;border:1px solid var(--notion-border);border-radius:var(--notion-radius-card);overflow:hidden;white-space:normal;text-align:left}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-home-recent-cover{background:var(--notion-surface);height:60px;display:flex;align-items:center;padding:var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-home-recent-cover img{height:60px;width:100%;object-fit:cover}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-home-recents strong{font-size:var(--notion-font-small);padding:var(--notion-space-2);font-weight:500;overflow:hidden}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-home-events{border:1px solid var(--notion-border);border-radius:var(--notion-radius-control);padding:var(--notion-space-3);font-size:var(--notion-font-small);color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-home-events>button{display:flex;width:100%;justify-content:flex-start;gap:var(--notion-space-6)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-workspace-home .notion-database{padding:var(--notion-space-3);width:100%;margin:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-template-toolbar{display:flex;align-items:center;gap:var(--notion-space-2);margin:var(--notion-space-4) 0;max-width:500px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-template-categories{display:flex;flex-wrap:wrap;gap:var(--notion-space-2);margin-bottom:var(--notion-space-6)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-template-categories button[aria-pressed="true"]{background:var(--notion-navigation-active)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-template-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:var(--notion-space-4)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-template-card{height:auto;min-height:170px;padding:var(--notion-space-4);border:1px solid var(--notion-border);border-radius:var(--notion-radius-card);display:flex;align-items:flex-start;flex-direction:column;gap:var(--notion-space-3);white-space:normal;text-align:left}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-template-card img{width:100%;height:140px;object-fit:cover}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-template-card>span{display:flex;align-items:center;gap:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-template-card p,:is(.notion-pack,[data-ui-pack="notion"]) .notion-template-card small{font-size:var(--notion-font-small);color:var(--notion-muted);font-weight:400;margin:0}
+[data-ui-pack="notion"].notion-template-preview{max-width:900px;width:min(900px,94vw);max-height:90vh;overflow:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-template-preview-page{display:block;max-height:60vh;overflow:auto;border:1px solid var(--notion-border)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-template-preview-page .notion-editor{padding-top:var(--notion-space-8);width:calc(100% - 64px)}
+[data-ui-pack="notion"].notion-create-view{width:310px;padding:var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-create-view form{display:grid;gap:var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-create-view form>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-create-view form>div button{height:65px;display:flex;flex-direction:column;gap:var(--notion-space-2);border:1px solid var(--notion-border);font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-create-view button[aria-pressed="true"]{background:var(--notion-info);border-color:var(--notion-accent);color:var(--notion-info-foreground)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-toolbar{display:flex;justify-content:space-between;align-items:center;gap:var(--notion-space-2);padding:var(--notion-space-3) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-toolbar>div{display:flex;align-items:center;gap:var(--notion-space-1)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid var(--notion-border);border-left:1px solid var(--notion-border)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-grid>[role="columnheader"]{padding:var(--notion-space-2);color:var(--notion-muted);font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-grid>[role="gridcell"]{position:relative;min-height:110px;padding:var(--notion-space-1);border-right:1px solid var(--notion-border);border-bottom:1px solid var(--notion-border);min-width:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-grid small{display:block;text-align:right;color:var(--notion-muted);padding:var(--notion-space-1)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-alternate-record{justify-content:flex-start;text-align:left;max-width:100%;gap:var(--notion-space-2);height:auto;min-height:var(--notion-control-height);font-weight:500}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-alternate-record strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:var(--notion-font-body);font-weight:500}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-grid .notion-alternate-record{width:100%;border:1px solid var(--notion-border);box-shadow:0 1px 2px var(--notion-border);margin-bottom:var(--notion-space-1)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-grid .notion-alternate-record strong{font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-add{opacity:0;position:absolute;top:var(--notion-space-1);left:var(--notion-space-1)}
+:is(.notion-pack,[data-ui-pack="notion"]) [role="gridcell"]:hover .notion-calendar-add,:is(.notion-pack,[data-ui-pack="notion"]) [role="gridcell"]:focus-within .notion-calendar-add{opacity:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-undated{padding:var(--notion-space-3);font-size:var(--notion-font-small);color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-list-view article{display:flex;align-items:center;justify-content:space-between;gap:var(--notion-space-3);border-bottom:1px solid var(--notion-border);min-height:36px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-alternate-properties{display:flex;flex-wrap:wrap;align-items:center;gap:var(--notion-space-2);font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-alternate-property{color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-gallery-view{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-gallery-view article{border:1px solid var(--notion-border);border-radius:var(--notion-radius-card);box-shadow:0 1px 2px var(--notion-border);overflow:hidden;padding:0;min-height:110px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-gallery-view img{display:block;width:100%;aspect-ratio:16/9;height:auto;object-fit:cover}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-feed-view article{border:1px solid var(--notion-border);border-radius:var(--notion-radius-card);padding:var(--notion-space-4);max-width:700px;margin:var(--notion-space-3) auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-feed-view p{white-space:pre-wrap;line-height:var(--notion-line-height)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-scroll{overflow:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-head{display:grid;width:max-content;border-bottom:1px solid var(--notion-border)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-head small{text-align:center;padding:var(--notion-space-2);color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-lanes{min-height:160px;background:repeating-linear-gradient(to right,transparent 0,transparent 159px,var(--notion-subtle) 160px,var(--notion-subtle) 224px)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-record{position:relative;min-height:32px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-bar{position:absolute;top:var(--notion-space-1);gap:var(--notion-space-2);height:28px;background:var(--notion-canvas);border:1px solid var(--notion-border);border-radius:var(--notion-radius-control);white-space:nowrap}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-properties{display:flex;gap:var(--notion-space-2);align-items:center}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-record-chart{width:100%;padding:var(--notion-space-6) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-multiselect-value{display:flex;flex-wrap:wrap;gap:var(--notion-space-1)}
+@media(max-width:620px){:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-view{overflow:auto}:is(.notion-pack,[data-ui-pack="notion"]) .notion-calendar-grid{min-width:660px}:is(.notion-pack,[data-ui-pack="notion"]) .notion-list-view article{align-items:flex-start;flex-direction:column;padding:var(--notion-space-2) 0}:is(.notion-pack,[data-ui-pack="notion"]) .notion-record-chart{padding:var(--notion-space-2)}}
+[data-ui-pack="notion"].notion-settings-dialog{width:min(1360px,90vw);max-width:1360px;height:89vh;padding:0;display:grid;grid-template-columns:minmax(180px,17.6%) minmax(0,1fr);overflow:hidden;gap:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-nav{background:var(--notion-surface);padding:var(--notion-space-4);overflow:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-nav section{margin-bottom:var(--notion-space-4)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-nav h2{font-size:var(--notion-font-small);font-weight:400;color:var(--notion-muted);margin:var(--notion-space-2) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-nav button{width:100%;justify-content:flex-start;gap:var(--notion-space-2);height:var(--notion-control-height);font-size:var(--notion-font-body)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-nav button[aria-current="page"]{background:var(--notion-navigation-active)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-content{position:relative;overflow:auto;padding:var(--notion-space-8) clamp(24px,10.5vw,160px) var(--notion-space-8)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-content h1{font-size:24px;margin:0 0 var(--notion-space-2);font-weight:650}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-content h2{font-size:var(--notion-font-body);margin:var(--notion-space-8) 0 var(--notion-space-3);padding-bottom:var(--notion-space-2);border-bottom:1px solid var(--notion-border)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-content p{font-size:var(--notion-font-small);color:var(--notion-muted);margin:var(--notion-space-1) 0 var(--notion-space-4)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-content label{display:grid;gap:var(--notion-space-2);font-size:var(--notion-font-small);margin:var(--notion-space-6) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-content small{display:block;color:var(--notion-muted);font-size:var(--notion-font-small);font-weight:400}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-row{display:flex;align-items:center;justify-content:space-between;gap:var(--notion-space-6);padding:var(--notion-space-4) 0;border-bottom:1px solid var(--notion-border)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-row strong{font-size:var(--notion-font-body);font-weight:500}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-row p{margin-bottom:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-close{position:absolute;right:var(--notion-space-2);top:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-profile{display:flex;align-items:center;gap:var(--notion-space-3);margin:var(--notion-space-8) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-profile .notion-ui-avatar{width:48px;height:48px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-invite{display:flex;gap:var(--notion-space-2);margin:var(--notion-space-6) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-invite button,:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-save button{height:var(--notion-control-input-height);white-space:nowrap}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-save{position:sticky;bottom:0;display:flex;justify-content:flex-end;gap:var(--notion-space-2);padding:var(--notion-space-4) 0;background:var(--notion-canvas);border-top:1px solid var(--notion-border);margin-top:var(--notion-space-6)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-import-dropzone{height:180px;width:100%;display:flex;flex-direction:column;gap:var(--notion-space-3);border:1px dashed var(--notion-accent);background:var(--notion-info);color:var(--notion-info-foreground)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-status{color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox{margin:0;padding:0 var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox header,:is(.notion-pack,[data-ui-pack="notion"]) .notion-discussions header{display:flex;align-items:center;justify-content:space-between;gap:var(--notion-space-2);padding:var(--notion-space-2) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox header>div,:is(.notion-pack,[data-ui-pack="notion"]) .notion-discussions header>div{display:flex;align-items:center}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox h2{font-size:var(--notion-font-small);font-weight:400;color:var(--notion-muted);margin:var(--notion-space-4) 0 var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-item{position:relative;border-bottom:1px solid var(--notion-border);margin-bottom:var(--notion-space-1)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-open{width:100%;height:auto;min-height:90px;align-items:flex-start;white-space:normal;text-align:left;padding:var(--notion-space-2) var(--notion-space-1) var(--notion-space-6);gap:var(--notion-space-2);font-size:var(--notion-font-body);font-weight:400;color:var(--notion-text);line-height:var(--notion-line-height)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-open>span{flex:1;min-width:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-open b,:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-open span>span{display:block}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-open small{color:var(--notion-muted);font-size:10px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-open .notion-ui-avatar{flex:none;width:20px;height:20px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-item.is-unread{background:transparent}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-actions{position:absolute;bottom:var(--notion-space-1);right:var(--notion-space-1);display:flex;justify-content:flex-end;gap:var(--notion-space-1);opacity:0;pointer-events:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-empty,:is(.notion-pack,[data-ui-pack="notion"]) .notion-discussion-empty{display:flex;flex-direction:column;align-items:center;text-align:center;gap:var(--notion-space-2);padding:var(--notion-space-8) var(--notion-space-3);color:var(--notion-muted);font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-comments-rail{width:360px;flex:none;border-left:1px solid var(--notion-border);height:100%;overflow:hidden;background:var(--notion-canvas)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-discussions{display:flex;flex-direction:column;height:100%;font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-discussions header{padding:var(--notion-space-2) var(--notion-space-4);border-bottom:1px solid var(--notion-border);min-height:var(--notion-layout-topbar)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-discussions header strong{display:flex;gap:var(--notion-space-2);align-items:center}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-discussion-scroll{overflow:auto;padding:var(--notion-space-4)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-comment-thread{padding:var(--notion-space-3);border:1px solid var(--notion-border);border-radius:var(--notion-radius-card);margin-bottom:var(--notion-space-4)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-comment{display:flex;align-items:flex-start;gap:var(--notion-space-2);margin:var(--notion-space-3) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-comment .notion-ui-avatar{flex:none;width:24px;height:24px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-comment>div{flex:1;min-width:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-comment p{white-space:pre-wrap;overflow-wrap:anywhere;margin:var(--notion-space-1) 0;line-height:var(--notion-line-height)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-comment small{font-size:10px;font-weight:400;color:var(--notion-muted);margin-left:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-comment-resolve{display:flex;justify-content:flex-end}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-comment-composer{display:flex;gap:var(--notion-space-1);align-items:flex-end;border:1px solid var(--notion-border);padding:var(--notion-space-1);border-radius:var(--notion-radius-control)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-comment-composer textarea{border:0;box-shadow:none;resize:vertical;min-height:var(--notion-control-input-height);background:transparent;font-size:var(--notion-font-small)}
+[data-ui-pack="notion"].notion-version-dialog{width:min(1360px,94vw);max-width:1360px;height:86vh;padding:0;display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:0;overflow:hidden}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-version-preview{display:block;height:100%;overflow:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-version-preview>header{display:flex;gap:var(--notion-space-2);align-items:center;height:var(--notion-layout-topbar);padding:0 var(--notion-space-4);border-bottom:1px solid var(--notion-border);font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-version-preview .notion-editor{padding-top:var(--notion-space-8);width:min(704px,calc(100% - 64px))}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-version-dialog>aside{display:flex;flex-direction:column;min-height:0;border-left:1px solid var(--notion-border);padding:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-version-dialog aside>header{display:flex;align-items:center;justify-content:space-between;padding:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-version-list{flex:1;overflow:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-version-list button{width:100%;height:auto;display:flex;flex-direction:column;align-items:flex-start;padding:var(--notion-space-2);gap:var(--notion-space-1);font-size:var(--notion-font-small);text-align:left}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-version-list button[aria-pressed="true"]{background:var(--notion-navigation-active)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-version-list small{color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-version-dialog footer{padding:var(--notion-space-2);display:flex;flex-direction:column;align-items:flex-end;gap:var(--notion-space-2)}
+@media(max-width:620px){[data-ui-pack="notion"].notion-settings-dialog{width:96vw;height:94vh;grid-template-columns:110px minmax(0,1fr)}:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-nav{padding:var(--notion-space-2) var(--notion-space-1)}:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-nav button{font-size:10px;padding:var(--notion-space-1);gap:var(--notion-space-1)}:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-content{padding:var(--notion-space-8) var(--notion-space-3)}:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-row{flex-wrap:wrap;gap:var(--notion-space-2)}:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-invite{flex-wrap:wrap}[data-ui-pack="notion"].notion-version-dialog{height:94vh;grid-template-columns:minmax(0,1fr) 115px}:is(.notion-pack,[data-ui-pack="notion"]) .notion-version-preview .notion-editor{width:calc(100% - 24px)}:is(.notion-pack,[data-ui-pack="notion"]) .notion-version-preview .notion-title{font-size:24px}:is(.notion-pack,[data-ui-pack="notion"]) .notion-comments-rail{position:absolute;inset:0 0 0 auto;width:min(360px,100%);z-index:20;box-shadow:var(--notion-shadow-popover)}}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-content .notion-ui-select-trigger{min-width:110px;max-width:240px;width:auto;font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-row>div:first-child{min-width:0;flex:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-row>input{max-width:220px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-list-toolbar{display:flex;align-items:center;gap:var(--notion-space-2);margin:var(--notion-space-6) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-list-toolbar input{flex:1;min-width:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-stat-grid,:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--notion-space-3);margin:var(--notion-space-6) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-stat-grid article,:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan-grid article,:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan{border:1px solid var(--notion-border);border-radius:var(--notion-radius-card);padding:var(--notion-space-4)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-stat-grid strong{display:block;font-size:24px;margin-top:var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-empty{display:grid;place-items:center;min-height:200px;padding:var(--notion-space-6);text-align:center;color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-formula-editor{display:grid;gap:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-formula-editor textarea{min-height:100px;font-family:monospace}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-formula-properties{display:flex;gap:var(--notion-space-1);flex-wrap:wrap;border-top:1px solid var(--notion-border);padding-top:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-formula-properties strong{width:100%;color:var(--notion-muted);font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-view-properties{border:0;border-top:1px solid var(--notion-border);margin:var(--notion-space-3) 0;padding:var(--notion-space-3) 0;max-height:240px;overflow:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-view-properties>div,:is(.notion-pack,[data-ui-pack="notion"]) .notion-view-properties label{display:flex;align-items:center;gap:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-view-properties label{flex:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-table th{position:relative}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-column-resize{position:absolute;right:-3px;top:0;bottom:0;width:6px;z-index:2;cursor:col-resize;touch-action:none}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-column-resize:hover,:is(.notion-pack,[data-ui-pack="notion"]) .notion-column-resize:focus-visible{background:var(--notion-accent);outline:none}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-summary td{border-bottom:0;color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-summary .notion-ui-select-trigger{border:0;box-shadow:none;background:transparent;font-size:var(--notion-font-small);height:28px;padding:0}
+[data-ui-pack="notion"].notion-manage-view{max-height:min(620px,85vh);overflow:auto}
+[data-ui-pack="notion"].notion-advanced-filters{width:min(650px,calc(100vw - 24px));max-height:70vh;overflow:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-filter-group{display:grid;gap:var(--notion-space-2);border:1px solid var(--notion-border);border-radius:var(--notion-radius-card);padding:var(--notion-space-2);margin:var(--notion-space-2) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-filter-group footer,:is(.notion-pack,[data-ui-pack="notion"]) .notion-filter-node,:is(.notion-pack,[data-ui-pack="notion"]) .notion-filter-rule{display:flex;align-items:center;gap:var(--notion-space-2);min-width:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-filter-node>.notion-filter-group,:is(.notion-pack,[data-ui-pack="notion"]) .notion-filter-rule{flex:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-filter-rule>input{min-width:70px;flex:1}
+@media(max-width:620px){:is(.notion-pack,[data-ui-pack="notion"]) .notion-filter-rule{flex-wrap:wrap}:is(.notion-pack,[data-ui-pack="notion"]) .notion-filter-rule .notion-ui-select-trigger{max-width:100%}}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-range{position:absolute;top:0;display:flex;min-height:32px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-range .notion-timeline-bar{position:relative;left:auto;flex:1;min-width:max-content;touch-action:none;cursor:grab}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-range .notion-timeline-bar:active{cursor:grabbing}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-resize{position:absolute;right:-3px;top:4px;bottom:0;width:7px;cursor:ew-resize;touch-action:none;border-radius:var(--notion-radius-control)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-resize:hover,:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-resize:focus-visible{background:var(--notion-accent);outline:none}
+:is(.notion-pack,[data-ui-pack="notion"]) textarea.notion-cell-input{height:auto;min-height:28px;max-height:180px;resize:none;line-height:1.5}
+[data-ui-pack="notion"].notion-formula-property-menu{width:min(640px,calc(100vw - 24px))}
+:is(.notion-pack .notion-formula-property-menu,[data-ui-pack="notion"].notion-formula-property-menu)>.notion-property-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(120px,180px);gap:var(--notion-space-3)}
+:is(.notion-pack .notion-formula-property-menu,[data-ui-pack="notion"].notion-formula-property-menu) .notion-formula-editor,:is(.notion-pack .notion-formula-property-menu,[data-ui-pack="notion"].notion-formula-property-menu) .notion-property-form-actions{grid-column:1/-1}
+:is(.notion-pack .notion-formula-property-menu,[data-ui-pack="notion"].notion-formula-property-menu) .notion-formula-editor{grid-template-columns:180px minmax(0,1fr);gap:var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-formula-editor>label,:is(.notion-pack,[data-ui-pack="notion"]) .notion-formula-editor>button,:is(.notion-pack,[data-ui-pack="notion"]) .notion-formula-editor>p{grid-column:1/-1}
+:is(.notion-pack .notion-formula-property-menu,[data-ui-pack="notion"].notion-formula-property-menu) .notion-formula-properties{display:flex;flex-direction:column;align-items:stretch;gap:0;max-height:190px;overflow:auto;border-top:0;border-right:1px solid var(--notion-border);padding:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-formula-properties button{justify-content:flex-start;text-align:start}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-formula-guide{font-size:var(--notion-font-small);color:var(--notion-muted);padding:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-formula-guide p{line-height:1.5}
+@media(max-width:620px){:is(.notion-pack .notion-formula-property-menu,[data-ui-pack="notion"].notion-formula-property-menu) .notion-formula-editor{grid-template-columns:110px minmax(0,1fr)}}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--notion-border)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan-grid article{border:0;border-radius:0;padding:var(--notion-space-6) var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan-grid h3{font-size:20px;margin:0 0 var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan-grid ul{list-style:none;padding:var(--notion-space-4) 0;margin:0;font-size:var(--notion-font-small);line-height:1.7}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan-grid li:before{content:'✓';margin-inline-end:var(--notion-space-2);color:var(--notion-muted)}
+@media(max-width:900px){:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan-grid{grid-template-columns:minmax(0,1fr)}}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-wide{padding-inline:calc(var(--notion-space-8)*2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan{display:flex;align-items:center;justify-content:space-between;gap:var(--notion-space-6)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan>div>strong{font-size:20px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan>aside{display:grid;grid-template-columns:1fr auto;gap:var(--notion-space-2);max-width:340px;padding:var(--notion-space-4);background:var(--notion-subtle);border-radius:var(--notion-radius-card)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan>aside p{margin:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan>aside button{grid-column:2;grid-row:1/3}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-plan-badge{margin-inline-start:var(--notion-space-2);background:var(--notion-tag-orange-bg);color:var(--notion-tag-orange-fg);padding:var(--notion-space-1);border-radius:var(--notion-radius-control);font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan-grid article{display:grid;grid-template-rows:160px 1fr;padding-inline:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-plan-heading{padding:var(--notion-space-4)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-plan-features{padding:var(--notion-space-4);background:var(--notion-subtle);font-size:var(--notion-font-small)}
+@media(max-width:620px){:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-wide{padding-inline:var(--notion-space-3)}:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan{flex-direction:column;align-items:stretch}:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan>aside{display:flex;flex-direction:column;min-width:0}:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-plan-grid article{grid-template-rows:auto 1fr}}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-range.has-duration .notion-timeline-bar{min-width:0;max-width:100%;overflow:hidden}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-range.has-duration .notion-timeline-bar strong{min-width:0;overflow:hidden;text-overflow:ellipsis}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-range.has-duration .notion-timeline-properties{min-width:0;overflow:hidden}
+
+:is(.notion-pack,[data-ui-pack="notion"]).notion-sort-control{width:min(380px,calc(100vw - 24px));padding:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-sort-rule{display:grid;grid-template-columns:20px minmax(0,1fr) minmax(0,1fr) 24px;align-items:center;gap:var(--notion-space-1);padding:var(--notion-space-1) 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-sort-rule .notion-select-trigger{height:28px;min-width:0;font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-sort-rule .notion-button{padding:2px;min-height:24px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-sort-add{width:100%;justify-content:flex-start;font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-sort-grip{cursor:grab;color:var(--notion-muted)}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table-scroll{padding:20px 28px 28px; margin-inline:-28px;max-width:calc(100% + 56px)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table-canvas{position:relative;max-width:none}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table .notion-ui-table-body tr:hover{background:transparent}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table td{position:relative;vertical-align:top}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table textarea{width:100%;padding:6px 9px;line-height:1.5;resize:none;overflow:hidden;min-height:36px;box-sizing:border-box;font-family:inherit;font-size:var(--notion-font-body)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table td:focus-within{outline:2px solid var(--notion-accent);outline-offset:-2px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-header{background:var(--notion-surface);font-weight:600}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-column-tools{display:flex;position:absolute;inset:0 0 auto;height:0;z-index:2}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-column-tools>div{position:relative;flex-shrink:0;height:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-column-tools .notion-column-resize{top:0;height:36px;bottom:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-column-handle{position:absolute;top:-20px;left:calc(50% - 12px);transform:rotate(90deg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-row-handle{position:absolute;left:-23px;top:7px}
+:is(.notion-pack,[data-ui-pack="notion"]) :is(.notion-simple-column-handle,.notion-simple-row-handle){opacity:0;padding:2px;min-height:20px;width:20px;color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table-scroll:focus-within :is(.notion-simple-column-handle,.notion-simple-row-handle),:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table-scroll:hover :is(.notion-simple-column-handle,.notion-simple-row-handle){opacity:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-add-row{width:100%;min-height:22px;opacity:0;justify-content:center;padding:2px;background:var(--notion-hover)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-add-column{position:absolute;right:-22px;top:0;height:calc(100% - 22px);width:22px;min-height:22px;opacity:0;justify-content:center;padding:2px;background:var(--notion-hover)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table-scroll:is(:hover,:focus-within) :is(.notion-simple-add-row,.notion-simple-add-column){opacity:1}
+@media(hover:none){:is(.notion-pack,[data-ui-pack="notion"]) :is(.notion-simple-column-handle,.notion-simple-row-handle,.notion-simple-add-row,.notion-simple-add-column){opacity:1}}
+
+:is(.notion-pack,[data-ui-pack="notion"]).notion-equation-popover{width:min(420px,calc(100vw - 24px));padding:var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-equation-fields textarea{font-family:monospace;min-height:64px;width:100%}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-equation-fields footer{display:flex;justify-content:flex-end;gap:var(--notion-space-2);padding-top:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-equation-fields footer .notion-button{height:28px;padding:4px 10px;font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-equation-preview{padding:var(--notion-space-3);overflow:auto;min-height:40px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inline-equation{cursor:pointer;border-radius:var(--notion-radius-control);padding:1px 2px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inline-equation:is(:hover,:focus-visible){background:var(--notion-hover);outline:1px solid var(--notion-border)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-equation-block{width:100%;justify-content:center;min-height:64px;overflow:auto;font-size:1.15em}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table-canvas>.notion-ui-table{overflow:visible}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-color-gray{color:var(--notion-tag-gray-fg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-highlight-gray{background:var(--notion-tag-gray-bg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-color-brown{color:var(--notion-tag-brown-fg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-highlight-brown{background:var(--notion-tag-brown-bg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-color-orange{color:var(--notion-tag-orange-fg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-highlight-orange{background:var(--notion-tag-orange-bg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-color-yellow{color:var(--notion-tag-yellow-fg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-color-green{color:var(--notion-tag-green-fg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-highlight-green{background:var(--notion-tag-green-bg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-color-blue{color:var(--notion-tag-blue-fg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-color-purple{color:var(--notion-tag-purple-fg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-highlight-purple{background:var(--notion-tag-purple-bg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-color-pink{color:var(--notion-tag-pink-fg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-color-red{color:var(--notion-tag-red-fg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-rich-highlight-red{background:var(--notion-tag-red-bg)}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-head small[data-today]{color:var(--notion-timeline-today);font-weight:600}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-today{position:absolute;top:0;bottom:0;border-left:1px solid var(--notion-timeline-today);pointer-events:none;z-index:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-range .notion-timeline-bar strong{position:sticky;left:0;background:inherit;padding-inline:2px;z-index:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-view .notion-calendar-toolbar .notion-ui-select-trigger{width:96px;height:28px;min-width:0}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-equation-fields.is-inline{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-equation-fields.is-inline textarea{min-height:28px;height:28px;padding:4px;border:0;box-shadow:none;background:var(--notion-surface);resize:none;overflow:hidden}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-equation-fields.is-inline footer{padding:0;grid-column:2;grid-row:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-equation-fields.is-inline [role="alert"]{grid-column:1/-1;grid-row:2}
+[data-ui-pack="notion"].notion-equation-popover:has(.is-inline){width:min(400px,calc(100vw - 24px));padding:6px;background:var(--notion-surface)}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox header h2{margin:0;font-weight:400}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-open span>span{color:var(--notion-muted);margin-top:var(--notion-space-1)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-open>small{flex:none;padding-top:2px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-open b{font-weight:500;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-open>.notion-inbox-unread{position:absolute;top:var(--notion-space-3);right:0;flex:none;width:6px;height:6px;border-radius:50%;background:var(--notion-primary)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-item:hover .notion-inbox-actions,:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-item:focus-within .notion-inbox-actions{opacity:1;pointer-events:auto}
+@media(hover:none){:is(.notion-pack,[data-ui-pack="notion"]) .notion-inbox-actions{opacity:1;pointer-events:auto}}
+
+/* Workspace settings lists and creation share the pack's form/table foundations. */
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-teamspaces-toolbar{display:flex;align-items:center;gap:var(--notion-space-2);flex-wrap:wrap;margin:var(--notion-space-4) 0 var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-content .notion-teamspace-search{display:flex;align-items:center;gap:var(--notion-space-1);margin:0 0 0 auto;max-width:160px;min-width:70px;flex:1;color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-teamspace-search input{height:28px;border:0;font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-teamspace-name{display:flex;gap:var(--notion-space-2);align-items:center;min-width:140px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-teamspace-name>svg{color:var(--notion-muted);flex:none}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-teamspaces table{font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-teamspaces th{font-weight:400;color:var(--notion-muted);white-space:nowrap}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-teamspaces td{padding-top:var(--notion-space-3);padding-bottom:var(--notion-space-3)}
+[data-ui-pack="notion"].notion-teamspace-create label{display:grid;gap:var(--notion-space-2);margin:var(--notion-space-4) 0;font-size:var(--notion-font-body)}
+[data-ui-pack="notion"].notion-teamspace-create textarea{min-height:80px;padding:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-default-teamspaces{width:100%;justify-content:flex-start;min-height:32px;margin-bottom:var(--notion-space-4);font-size:var(--notion-font-small);background:var(--notion-surface)}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-import-dropzone[data-dragging="true"]{outline:2px solid var(--notion-accent);outline-offset:2px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-import-formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:var(--notion-space-3)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-import-formats>.notion-button{display:flex;flex-direction:column;align-items:flex-start;height:auto;padding:var(--notion-space-4);text-align:left;white-space:normal}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-import-formats>.notion-button>span{display:flex;align-items:center;gap:var(--notion-space-2)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-import-formats small{margin-top:var(--notion-space-2);font-weight:400}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-import-completed{list-style:none;padding:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-import-completed li,:is(.notion-pack,[data-ui-pack="notion"]) .notion-import-retry{display:flex;align-items:center;gap:var(--notion-space-2);padding:var(--notion-space-3) 0;border-bottom:1px solid var(--notion-border);font-size:var(--notion-font-body)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-import-completed small{margin-left:auto}
+/* Recursive document content shares the outer page's tokens and draft. */
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-nested-blocks{min-width:0;width:100%;padding:2px 0;position:relative}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-nested-blocks .notion-block-controls{left:-42px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-nested-add{color:var(--notion-muted);font-size:var(--notion-font-small);opacity:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-nested-blocks:hover>.notion-nested-add,:is(.notion-pack,[data-ui-pack="notion"]) .notion-nested-blocks:focus-within>.notion-nested-add{opacity:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-synced-block{position:relative;border:1px solid transparent;flex:1;min-width:0;padding:4px 8px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-synced-block:hover,:is(.notion-pack,[data-ui-pack="notion"]) .notion-synced-block:focus-within{border-color:var(--notion-tag-red-fg)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-synced-block>header{display:flex;align-items:center;justify-content:space-between;color:var(--notion-muted);font-size:var(--notion-font-small);margin-bottom:4px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-synced-block>header>div{display:flex}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-synced-block>header .notion-button{font-size:11px;min-height:24px;padding:2px 5px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-synced-missing{display:flex;gap:8px;color:var(--notion-muted);padding:8px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-embed-block{display:grid;gap:8px;width:100%}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-embed-block iframe{width:100%;height:320px;border:1px solid var(--notion-border);border-radius:var(--notion-radius-card)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-simple-table .notion-rich-editor{font-size:14px;line-height:22px;min-height:32px;padding:5px 8px;width:100%;box-sizing:border-box}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-column-block>.notion-nested-blocks{flex:1;min-width:0}
+:is(.notion-pack,[data-ui-pack="notion"]) [data-block-selected="true"]{background:var(--notion-info);border-radius:var(--notion-radius-control)}
+[data-ui-pack="notion"].notion-multi-selection-toolbar{display:flex;max-width:calc(100vw - 16px);flex-wrap:wrap;gap:4px;align-items:center;border:1px solid var(--notion-border);background:var(--notion-canvas);color:var(--notion-text);box-shadow:var(--notion-shadow-popover);border-radius:var(--notion-radius-card);padding:4px;font-family:var(--notion-font-family);font-size:var(--notion-font-small)}
+[data-ui-pack="notion"].notion-multi-selection-toolbar .notion-button{padding:4px;min-width:28px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-comment-range{background:var(--notion-tag-yellow-bg);border-bottom:1px solid var(--notion-tag-yellow-fg);cursor:pointer}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-comment-thread[data-active="true"]{outline:1px solid var(--notion-accent);outline-offset:2px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-comment-draft-quote{border-left:2px solid var(--notion-border);padding:8px;margin:12px 0;color:var(--notion-muted);font-size:var(--notion-font-small)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-collaboration-caret{position:relative;display:inline-block;width:0;border-left:2px solid var(--notion-caret-color);height:1.2em;vertical-align:text-bottom;pointer-events:none}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-collaboration-caret::after{content:attr(data-name);position:absolute;bottom:100%;left:-2px;padding:1px 4px;border-radius:3px 3px 3px 0;white-space:nowrap;font-size:10px;line-height:16px;color:var(--notion-canvas);background:var(--notion-caret-color)}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-layout{display:flex;min-width:0;border-block:1px solid var(--notion-border)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-layout>.notion-timeline-scroll{flex:1;min-width:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-table{width:200px;flex:none;border-right:1px solid var(--notion-border)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-table header{height:30px;border-bottom:1px solid var(--notion-border);padding:6px 12px;color:var(--notion-muted);font-size:12px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-table>button{height:32px;display:block;width:100%;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-radius:0;padding:4px 12px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-head{height:30px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-dependency-lines{position:absolute;inset:0;pointer-events:none;overflow:visible}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-resize-start{left:-3px;right:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-date{width:210px;margin:4px 0 12px;height:28px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-dependencies{width:min(350px,calc(100vw - 24px));display:grid;gap:10px;padding:14px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-dependencies p{font-size:12px;color:var(--notion-muted);margin:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-dependencies label{display:grid;gap:4px;font-size:12px;color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-dependencies ul{list-style:none;padding:0;margin:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-dependencies li{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--notion-border);padding:6px 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-settings{display:grid;gap:10px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-types{display:flex;gap:6px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-types button{flex:1;border:1px solid var(--notion-border);height:34px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-types button[aria-pressed=true]{color:var(--notion-accent);border-color:var(--notion-accent);background:var(--notion-info)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-setting-toggle{display:flex!important;align-items:center;justify-content:space-between;gap:12px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-settings fieldset{display:grid;gap:8px;border:0;padding:8px 0;margin:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-number-chart{width:100%;display:flex;flex-direction:column;justify-content:center;gap:8px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-number-chart strong{font-size:64px;letter-spacing:-2px;line-height:1.1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-number-chart span{color:var(--notion-muted);font-size:13px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-footer{display:flex;justify-content:flex-end;gap:8px;margin-top:8px;color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-drilldown{max-height:80dvh;overflow:auto}
+@media(max-width:620px){:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-table{width:130px}:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-view .notion-calendar-toolbar{flex-wrap:wrap;gap:6px}}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form>header{display:flex;justify-content:flex-end;gap:8px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-sharing{width:min(380px,calc(100vw - 24px));padding:16px;display:grid;gap:12px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-sharing>p{margin:0;color:var(--notion-muted);font-size:13px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-sharing>label{display:flex;align-items:center;justify-content:space-between}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-open-link{color:var(--notion-accent);text-decoration:underline;font-size:13px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-settings{border:0;padding:8px 0;display:grid;gap:12px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-settings textarea{min-height:36px;resize:vertical}
+.notion-public-form[data-ui-pack="notion"]{min-height:100dvh;color:var(--notion-text);background:var(--notion-canvas);font-family:var(--notion-font-family);padding:60px 24px;font-size:16px;line-height:1.5}
+.notion-public-form[data-ui-pack="notion"]>.notion-database-form{max-width:640px;margin:auto}
+.notion-public-form[data-ui-pack="notion"] .notion-database-form h2{font-size:32px;line-height:1.2;letter-spacing:-.5px}
+.notion-public-form[data-ui-pack="notion"] .notion-database-form-success{text-align:center;padding-top:120px}
+
+[data-ui-pack="notion"].notion-manage-view{max-height:min(620px,var(--radix-popover-content-available-height),calc(100dvh - 24px));overscroll-behavior:contain}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-range.has-duration .notion-timeline-bar strong{flex:none;max-width:100%}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-properties{flex:1;min-width:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-view .notion-calendar-toolbar .notion-ui-select-trigger{white-space:nowrap}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-timeline-offscreen{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;color:var(--notion-muted)}
+[data-ui-pack="notion"].notion-timeline-error{width:250px;padding:12px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-toggle-block summary>.notion-rich-editor{flex:1;min-width:0;display:inline-block;vertical-align:top;width:calc(100% - 24px)}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-groups{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;font-size:12px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-groups i{display:inline-block;width:8px;height:8px;border-radius:2px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-groups span{color:var(--notion-muted)}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-synced-block>header{position:absolute;bottom:calc(100% + 5px);right:0;justify-content:flex-end;white-space:nowrap;margin:0;border:1px solid var(--notion-border);border-radius:var(--notion-radius-control);background:var(--notion-canvas);box-shadow:var(--notion-shadow-popover);opacity:0;pointer-events:none;z-index:5}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-synced-block:hover>header,:is(.notion-pack,[data-ui-pack="notion"]) .notion-synced-block:focus-within>header{opacity:1;pointer-events:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-synced-block>header .notion-button{font-size:var(--notion-font-small);min-height:28px;padding:4px 8px;color:var(--notion-text)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-synced-block>header>div{border-left:1px solid var(--notion-border)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-synced-block>.notion-nested-blocks>.notion-nested-add{position:absolute;top:100%;left:0}
+.notion-pack .notion-main,.notion-pack .notion-side-peek,.notion-pack .notion-center-peek-body{container-type:inline-size;container-name:notion-pane}
+.notion-pack .notion-topbar-start{overflow:hidden}
+.notion-pack .notion-breadcrumb{min-width:0}
+@container notion-pane (max-width:600px){.notion-pack .notion-edit-status:not([role=alert]){display:none}.notion-pack .notion-database-toolbar{flex-wrap:nowrap}.notion-pack .notion-database-tabs{min-width:60px}.notion-pack .notion-database-toolbar>button[data-variant=default]{font-size:0;padding:0 6px;min-width:28px}.notion-pack .notion-database-toolbar>button[data-variant=default] svg{flex:none}}
+@container notion-pane (max-width:500px){.notion-pack .notion-page-access{display:none}.notion-pack .notion-breadcrumb{max-width:100%}}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question>div:first-child>.notion-property-trigger{width:26px;flex:none;justify-content:center}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question>div:first-child>.notion-property-trigger>span{display:none}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-block:has(.notion-block:hover,.notion-block:focus-within)>.notion-block-controls{opacity:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-block:has(.notion-block)>.notion-block-controls:hover,:is(.notion-pack,[data-ui-pack="notion"]) .notion-block:has(.notion-block)>.notion-block-controls:focus-within{opacity:1}
+@media(max-width:620px){:is(.notion-pack,[data-ui-pack="notion"]) .notion-block:has(.notion-block)>.notion-block-controls:not(:hover):not(:focus-within){opacity:0}}
+/* Form builder and response states compose the shared controls. */
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form{max-width:600px;margin:32px auto;position:relative}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form>header{margin-bottom:32px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form>h2{font-size:32px;line-height:1.2;letter-spacing:-.6px;font-weight:700;margin:0 0 12px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form>p{margin:0 0 24px;font-size:14px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-description-placeholder{color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question{position:relative;padding:16px;border-radius:8px;border:1px solid var(--notion-border);margin:12px 0;gap:12px;transition:border-color var(--notion-motion-hover) ease}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question:hover{border-color:color-mix(in srgb,var(--notion-text) 20%,var(--notion-border))}
+:is(.notion-pack,[data-ui-pack="notion"]) .is-designing .notion-form-question:focus-within{border-color:var(--notion-accent);box-shadow:0 0 0 1px color-mix(in srgb,var(--notion-accent) 18%,transparent)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question-heading{display:flex;align-items:center;justify-content:space-between;min-height:24px;gap:12px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question-heading>label{font-size:16px;font-weight:600;color:var(--notion-text);min-width:0;overflow-wrap:anywhere}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question-actions{width:24px;height:24px;padding:0;opacity:0;flex:none;color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question:hover .notion-form-question-actions,:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question:focus-within .notion-form-question-actions{opacity:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question-description{font-size:13px;color:var(--notion-muted);white-space:pre-wrap;margin:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-option{display:flex;align-items:center;gap:8px;font-size:14px;line-height:1.5;padding:4px 0;margin:0;cursor:pointer;overflow-wrap:anywhere}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-option:has(:disabled){cursor:default}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-choice-radio{appearance:auto;display:inline-block;width:16px;height:16px;min-width:16px;padding:0;margin:0;accent-color:var(--notion-accent);box-shadow:none}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-condition-badge{display:flex;align-items:center;gap:4px;width:max-content;max-width:100%;font-size:12px;color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question[data-invalid]{border-color:var(--notion-destructive)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question-error{font-size:13px;color:var(--notion-destructive);margin:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-add-question{display:flex;margin:20px auto;border-radius:50%;width:28px;height:28px;padding:0;color:var(--notion-accent);background:var(--notion-info)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-access{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--notion-radius-control);background:var(--notion-subtle);color:var(--notion-muted);font-size:12px;margin-bottom:20px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-access>span{flex:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-designer-fields{display:grid;gap:16px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-designer-fields>label{display:grid;gap:6px;font-size:13px;color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-designer-fields>.notion-form-designer-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-designer-fields>footer{display:flex;justify-content:flex-end;gap:8px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-designer-fields fieldset{border:0;padding:0;margin:0;display:grid;gap:8px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-condition-summary{display:flex;align-items:center;justify-content:space-between;font-size:13px;padding:8px;background:var(--notion-subtle);border-radius:var(--notion-radius-control)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question-editor,:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-logic-editor{width:min(480px,calc(100vw - 24px));max-height:calc(100dvh - 48px);overflow:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-multiple-dropdown{display:flex;gap:6px;flex-wrap:wrap}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-multiple-dropdown>.notion-ui-select-trigger{width:100%}
+@media(max-width:620px){:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question-actions{opacity:1}:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form>header{gap:6px;margin-bottom:24px}:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question{padding:12px}}
+
+/* Form controls share the database toolbar; standalone forms keep their header. */
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-toolbar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-toolbar-slot{flex:none;margin-left:auto}
+:is(.notion-pack,[data-ui-pack="notion"]) .is-designing .notion-form-question-heading>label{font-size:24px;font-weight:600}
+:is(.notion-pack,[data-ui-pack="notion"]) .is-designing .notion-form-question{padding:20px;border-color:color-mix(in srgb,var(--notion-accent) 17%,var(--notion-border));margin:24px 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .is-designing .notion-form-question:focus-within{border-color:var(--notion-accent)}
+@container notion-pane (max-width:600px){:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-toolbar:has(.notion-form-toolbar-slot){flex-wrap:wrap}:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-toolbar-slot{max-width:100%}}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .is-designing .notion-form-question:has(.notion-form-question-actions[data-state="open"]){border-color:var(--notion-accent);box-shadow:0 0 0 1px color-mix(in srgb,var(--notion-accent) 18%,transparent)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-question:has(.notion-form-question-actions[data-state="open"]) .notion-form-question-actions{opacity:1}
+
+/* Builder geometry is normalized from the Mobbin app region at 1512px. */
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form.is-designing{margin-top:80px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form.is-designing>h2{font-size:var(--notion-font-title)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form.is-designing>p,:is(.notion-pack,[data-ui-pack="notion"]) .is-designing :is(.notion-form-question-description,.notion-form-option,.notion-ui-input,.notion-ui-textarea){font-size:16px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-access{font-size:14px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-access>span{min-width:0;overflow-wrap:anywhere}
+@container notion-pane (max-width:600px){:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form.is-designing{margin-top:32px}:is(.notion-pack,[data-ui-pack="notion"]) .notion-database-form.is-designing>h2{font-size:var(--notion-font-view-title)}:is(.notion-pack,[data-ui-pack="notion"]) .is-designing .notion-form-question-heading>label{font-size:20px}}
+
+/* Database definition panels use the same padded header/body/footer in both themes. */
+[data-ui-pack="notion"].notion-manage-view{padding:0;overflow:hidden;max-height:min(760px,var(--radix-popover-content-available-height),calc(100dvh - 24px))}
+[data-ui-pack="notion"].notion-manage-view>form{display:flex;flex-direction:column;max-height:inherit;gap:0;min-height:0}
+[data-ui-pack="notion"] .notion-view-settings-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px 8px;flex:none}
+[data-ui-pack="notion"] .notion-view-settings-body{display:grid;gap:12px;padding:0 14px 14px;overflow:auto;min-height:0;overscroll-behavior:contain}
+[data-ui-pack="notion"] .notion-view-settings-footer{display:flex;align-items:center;flex-wrap:wrap;gap:8px;flex:none;padding:10px 14px;border-top:1px solid var(--notion-border);background:var(--notion-canvas)}
+[data-ui-pack="notion"] .notion-view-settings-footer .notion-surface-error{flex-basis:100%;margin:0}
+[data-ui-pack="notion"] .notion-chart-settings{gap:16px}
+[data-ui-pack="notion"] .notion-chart-settings fieldset{gap:2px;padding:0}
+[data-ui-pack="notion"] .notion-chart-settings legend{font-size:12px;color:var(--notion-muted);padding:0;margin:0 0 8px}
+[data-ui-pack="notion"] .notion-chart-types{gap:6px}
+[data-ui-pack="notion"] .notion-chart-types button{height:44px;min-width:0;padding:0}
+[data-ui-pack="notion"] .notion-chart-types button[aria-pressed="true"]{background:var(--notion-info);border-color:var(--notion-accent);box-shadow:0 0 0 1px var(--notion-accent)}
+[data-ui-pack="notion"] .notion-chart-setting-row{display:flex!important;align-items:center;justify-content:space-between;gap:8px;min-height:32px;color:var(--notion-text)!important;font-size:14px!important}
+[data-ui-pack="notion"] .notion-chart-setting-row>span{flex:none}
+[data-ui-pack="notion"] .notion-chart-setting-row>.notion-select-menu{flex:1;min-width:0;max-width:65%}
+[data-ui-pack="notion"] .notion-chart-setting-toggle{min-height:32px;color:var(--notion-text)!important;font-size:14px!important}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--notion-muted);text-align:center}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-empty strong{color:var(--notion-text);font-weight:500}
+
+/* Preferences uses section separators and content-sized choices, as in the dark source. */
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-preferences .notion-settings-row{border-bottom:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-preferences p{font-size:13px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-preferences>p{font-size:16px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-settings-preferences .notion-ui-select-trigger{min-width:0;height:var(--notion-control-height);font-size:var(--notion-font-body);padding-inline:8px}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-option-label{display:flex;align-items:center;justify-content:space-between;gap:32px;min-width:190px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-palette{display:inline-flex;gap:3px;flex-shrink:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-chart-palette i{width:11px;height:11px;border-radius:2px}
+.notion-pack .notion-main>.notion-canvas>.notion-editor-no-icon:not(.notion-editor-has-cover){padding-top:80px}
+.notion-pack .notion-editor-empty{display:flex;flex-direction:column;padding-bottom:54px}
+.notion-pack .notion-editor-empty>.notion-title::placeholder{color:var(--notion-empty-title)}
+.notion-pack .notion-editor-empty>.notion-editor-icon-empty{opacity:0}
+.notion-pack .notion-editor-empty>.notion-editor-icon-empty:hover,.notion-pack .notion-editor-empty>.notion-editor-icon-empty:focus-visible{opacity:1}
+.notion-pack .notion-page-starters{margin-top:auto;padding-top:32px;color:var(--notion-navigation-muted);font-size:12px}
+.notion-pack .notion-page-starters>div{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
+.notion-pack .notion-page-starters .notion-button{height:32px;padding:0 12px;border-radius:999px;background:var(--notion-hover);font-size:14px;gap:6px;color:var(--notion-text)}
+.notion-pack .notion-page-starters .notion-button:hover:not(:disabled){background:var(--notion-selected)}
+.notion-pack .notion-page-starters .notion-button:disabled{opacity:.5}
+@media(max-width:620px){.notion-pack .notion-main>.notion-canvas>.notion-editor-no-icon:not(.notion-editor-has-cover){padding-top:64px}.notion-pack .notion-editor-empty{padding-bottom:32px}.notion-pack .notion-page-starters>div{gap:6px}.notion-pack .notion-page-starters .notion-button{font-size:13px;padding:0 10px}}
+
+.notion-pack .notion-editor-empty .notion-rich-editor[data-empty="true"]:not(:focus)::before{content:none}
+
+.notion-pack .notion-editor-icon-space{height:26px;flex-shrink:0}
+
+/* Anchored question options, shared by every form builder. Source: Mobbin required-question flow. */
+[data-ui-pack="notion"].notion-form-question-options[data-padding="none"]{width:292px;max-width:calc(100vw - 24px);max-height:var(--radix-popover-content-available-height);overflow:auto;padding:8px;border-radius:10px}
+[data-ui-pack="notion"].notion-form-question-options>header{display:flex;align-items:center;justify-content:space-between;padding:6px 8px 10px;font-size:14px}
+[data-ui-pack="notion"].notion-form-question-options>header .notion-button{height:20px;width:20px;padding:0;color:var(--notion-muted)}
+[data-ui-pack="notion"].notion-form-question-options>label,[data-ui-pack="notion"].notion-form-question-options>.notion-button{display:flex;align-items:center;gap:10px;width:100%;min-height:30px;padding:5px 8px;font-size:14px;text-align:left;justify-content:flex-start;white-space:normal}
+[data-ui-pack="notion"].notion-form-question-options>label>:first-child,[data-ui-pack="notion"].notion-form-question-options>.notion-button>svg:first-child{width:16px;flex:none;text-align:center}
+[data-ui-pack="notion"].notion-form-question-options>label [role="switch"]{margin-left:auto;flex:none}
+[data-ui-pack="notion"].notion-form-question-options>.notion-button>span{margin-left:auto;color:var(--notion-muted);font-size:13px}
+[data-ui-pack="notion"].notion-form-question-options>.notion-button>svg:last-child:not(:first-child){margin-left:auto;color:var(--notion-muted);flex:none}
+[data-ui-pack="notion"].notion-form-question-options>hr{border:0;border-top:1px solid var(--notion-border);margin:6px 4px}
+[data-ui-pack="notion"] .notion-form-question-move{padding-left:22px}
+[data-ui-pack="notion"] .notion-form-question-move>.notion-button{width:100%;justify-content:flex-start;gap:10px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-choice-author{display:flex;align-items:center;gap:10px;min-height:32px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-choice-author>.notion-button:last-child{opacity:0;padding:0;width:24px;flex:none;color:var(--notion-muted)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-choice-author:hover>.notion-button:last-child,:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-choice-author:focus-within>.notion-button:last-child{opacity:1}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-choice-name{flex:1;justify-content:flex-start;text-align:left;font-weight:400;white-space:normal;height:auto;min-height:30px;padding:3px 0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-add-choice{gap:10px;color:var(--notion-muted);font-weight:400;padding:6px 0;justify-content:flex-start}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-choice-draft{display:flex;gap:6px;flex-wrap:wrap;flex:1;min-width:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-choice-draft>input{width:100%;flex:1 1 100px;min-width:0}
+[data-ui-pack="notion"].notion-form-choice-confirm{width:min(324px,calc(100vw - 24px));padding:20px;gap:8px;text-align:center}
+[data-ui-pack="notion"].notion-form-choice-confirm h2{padding:0;font-size:16px;line-height:24px;margin:0 12px 4px}
+[data-ui-pack="notion"].notion-form-choice-confirm>[data-dialog-description]{font-size:12px}
+[data-ui-pack="notion"].notion-form-choice-confirm>.notion-button{width:100%;justify-content:center}
+@media(hover:none){:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-choice-author>.notion-button:last-child{opacity:1}}
+
+[data-ui-pack="notion"].notion-form-choice-confirm>.notion-ui-dialog-content-2{display:none}
+[data-ui-pack="notion"].notion-form-choice-confirm>.notion-button[data-variant="destructive"]{background:color-mix(in srgb,var(--notion-destructive) 16%,var(--notion-canvas));color:var(--notion-destructive);border:1px solid color-mix(in srgb,var(--notion-destructive) 60%,var(--notion-border))}
+
+[data-ui-pack="notion"].notion-form-question-options>.notion-form-linked-property{width:100%;display:flex;align-items:center;justify-content:flex-start;gap:10px;min-height:30px;font-size:14px;padding:5px 8px}
+
+/* Selection controls use adopted collision-aware popovers in both themes. */
+[data-ui-pack="notion"].notion-selection-toolbar .notion-button[aria-pressed="true"]{background:var(--notion-info);color:var(--notion-primary)}
+[data-ui-pack="notion"] .notion-equation-glyph{font-family:Georgia,serif;font-size:16px;font-style:italic}
+[data-ui-pack="notion"].notion-selection-toolbar .notion-rich-color-trigger{width:auto;min-width:38px;gap:3px}
+[data-ui-pack="notion"].notion-rich-color-menu{width:194px;min-width:0;max-width:calc(100vw - 16px);max-height:min(360px,var(--radix-popover-content-available-height));overflow-y:auto;padding:10px 12px;border-radius:8px}
+[data-ui-pack="notion"].notion-rich-color-menu>section+section{margin-top:14px}
+[data-ui-pack="notion"].notion-rich-color-menu strong{display:block;font-size:12px;font-weight:500;color:var(--notion-navigation-muted);margin-bottom:8px}
+[data-ui-pack="notion"] .notion-rich-color-grid{display:grid;grid-template-columns:repeat(5,26px);gap:8px}
+[data-ui-pack="notion"] .notion-rich-color-grid .notion-rich-color-choice{box-sizing:border-box;min-height:26px;width:26px;height:26px;padding:0;border:1px solid var(--notion-border);border-radius:5px;font-size:16px;font-weight:500}
+[data-ui-pack="notion"] .notion-rich-color-grid .notion-rich-color-choice:not(.is-background){background:var(--notion-canvas)}
+[data-ui-pack="notion"] .notion-rich-color-grid .notion-rich-color-choice[aria-pressed="true"]{outline:2px solid var(--notion-text);outline-offset:-2px}
+[data-ui-pack="notion"] .notion-rich-color-grid .notion-rich-color-choice:hover{box-shadow:0 0 0 2px var(--notion-subtle)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-branch-source{display:grid;gap:4px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-branch-source>span{color:var(--notion-muted);font-size:12px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-branch-source>strong{font-size:16px;overflow-wrap:anywhere}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-branch-changes{display:grid;gap:6px;padding:12px;background:var(--notion-surface);border:1px solid var(--notion-border);border-radius:6px;font-size:12px;overflow-wrap:anywhere}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-branch-changes>strong{font-weight:500}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-branch-removal{display:grid;gap:8px;font-size:13px;color:var(--notion-muted);margin:0}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-form-branch-fields>footer{flex-wrap:wrap}

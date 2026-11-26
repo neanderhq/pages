@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: pages_dev
+      POSTGRES_PASSWORD: pages_dev_only
+      POSTGRES_DB: pages_dev
+    ports:
+      - "127.0.0.1:55470:5432"
+    volumes:
+      - pages_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pages_dev -d pages_dev"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+volumes:
+  pages_postgres:

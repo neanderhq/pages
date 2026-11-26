@@ -1,0 +1,13 @@
+.notion-pack .notion-sort-list{position:relative;min-width:0}
+.notion-pack .notion-sort-item{position:relative;min-width:0;will-change:transform}
+.notion-pack .notion-sort-item[data-drag-slot="true"]>.notion-sort-content{visibility:hidden}
+.notion-pack .notion-insertion-slot{position:absolute;inset:1px 0;pointer-events:none;border:1px dashed var(--notion-accent);border-radius:4px;background:color-mix(in srgb,var(--notion-accent) 8%,transparent)}
+.notion-pack .notion-sort-item[data-nest-target="true"]>.notion-sort-content{outline:2px solid var(--notion-accent);outline-offset:-2px;border-radius:4px;background:color-mix(in srgb,var(--notion-accent) 8%,transparent)}
+[data-ui-pack="notion"].notion-drag-preview{padding:5px 8px;border:1px solid var(--notion-border);border-radius:var(--notion-radius-control);background:var(--notion-canvas);color:var(--notion-text);box-shadow:var(--notion-shadow-popover);font:var(--notion-font-body)/var(--notion-line-height) var(--notion-font-family);cursor:grabbing;pointer-events:none}
+[data-ui-pack="notion"] .notion-drag-page-preview{display:flex;align-items:center;gap:7px;font-weight:500;color:var(--notion-navigation-text)}
+[data-ui-pack="notion"] .notion-drag-block-preview{font-size:16px;line-height:24px;white-space:pre-wrap;overflow-wrap:anywhere}
+.notion-pack .notion-drag-handle{touch-action:none}
+.notion-pack .notion-sort-list[data-sorting="true"]{user-select:none;cursor:grabbing}
+.notion-pack .notion-sort-list[data-sorting="true"] .notion-sort-content{pointer-events:none}
+@media(max-width:620px){.notion-pack .notion-block-controls .notion-drag-handle{display:inline-flex}}
+@media(prefers-reduced-motion:reduce){.notion-pack .notion-sort-item{transition:none!important}}

@@ -1,0 +1,68 @@
+/* Product navigation geometry, normalized from the supplied Notion reference. */
+.notion-pack .notion-sidebar{height:100dvh;min-height:0;padding:0;flex-basis:var(--notion-layout-sidebar);width:var(--notion-layout-sidebar);background:var(--notion-surface);color:var(--notion-navigation-text)}
+.notion-pack .notion-nav-workspace{display:flex;align-items:center;gap:4px;height:44px;min-height:44px;padding:4px 12px}
+.notion-pack .notion-nav-workspace .notion-workspace-switcher{gap:8px;min-height:32px;padding:0;font-weight:600;color:var(--notion-text)}
+.notion-pack .notion-nav-workspace .notion-workspace-switcher strong{flex:1;text-align:left;font-size:14px;font-weight:600}
+.notion-pack .notion-nav-workspace .notion-workspace-avatar{width:20px;height:20px;background:transparent;font-size:18px}
+.notion-pack .notion-nav-collapse,.notion-pack .notion-workspace-chevron{opacity:0;transition:opacity var(--notion-motion-hover) ease}
+.notion-pack .notion-nav-workspace:hover .notion-nav-collapse,.notion-pack .notion-nav-workspace:focus-within .notion-nav-collapse,.notion-pack .notion-nav-workspace:hover .notion-workspace-chevron,.notion-pack .notion-nav-workspace:focus-within .notion-workspace-chevron{opacity:1}
+.notion-pack .notion-nav-primary{display:flex;align-items:center;gap:2px;flex:none;height:36px;padding:0 8px}
+.notion-pack .notion-nav-primary .notion-nav-item{width:30px;min-height:30px;height:30px;padding:0;flex:none;justify-content:center;border-radius:18px}
+.notion-pack .notion-nav-primary .notion-nav-item[aria-label="Home"]{width:auto;min-width:83px;gap:7px;padding:0 9px}
+.notion-pack .notion-nav-primary .notion-nav-item[aria-current="page"]{background:var(--notion-navigation-active);color:var(--notion-text);font-weight:600}
+.notion-pack .notion-nav-search{margin-left:auto;display:flex;align-items:center}
+.notion-pack .notion-nav-search .notion-sidebar-action{width:28px;height:28px;min-height:28px;padding:0;justify-content:center;color:var(--notion-navigation-muted)}
+.notion-pack .notion-nav-search .notion-sidebar-action>span{display:none}
+.notion-pack .notion-nav-search .notion-sidebar-action>svg{width:19px;height:19px;stroke-width:1.7}
+.notion-pack .notion-sidebar-scroll{padding:0 8px 8px;scrollbar-width:thin;scrollbar-color:transparent transparent}
+.notion-pack .notion-sidebar-scroll:hover{scrollbar-color:var(--notion-border) transparent}
+.notion-pack .notion-nav-section{margin-top:18px}
+.notion-pack .notion-nav-trial+.notion-nav-section{margin-top:5px}
+.notion-pack .notion-nav-heading{display:flex;align-items:center;gap:6px;height:24px;margin:0 8px 3px;color:var(--notion-navigation-muted);font-size:12px;font-weight:500}
+.notion-pack .notion-nav-heading .notion-section-toggle{flex:initial;min-height:24px;padding:0;font-size:12px;font-weight:500;color:inherit}
+.notion-pack .notion-nav-item{display:flex;align-items:center;justify-content:flex-start;width:100%;min-height:30px;height:30px;gap:8px;padding:0 8px;border-radius:5px;color:var(--notion-navigation-text);font-size:14px;font-weight:500;text-align:left}
+.notion-pack .notion-nav-icon{position:relative;display:flex;align-items:center;justify-content:center;flex:none;width:18px;height:20px;color:var(--notion-navigation-muted)}
+.notion-pack .notion-nav-item[aria-current="page"]{background:var(--notion-navigation-active)}
+.notion-pack .notion-nav-item[aria-current="page"] .notion-nav-icon{color:var(--notion-text)}
+.notion-pack .notion-nav-icon.has-notification:after{content:"";position:absolute;right:-1px;top:0;width:5px;height:5px;border-radius:50%;background:var(--notion-primary)}
+.notion-pack .notion-nav-add{color:var(--notion-navigation-muted);font-weight:500}
+.notion-pack .notion-nav-add>svg{flex:none;width:18px}
+.notion-pack .notion-nav-trial{height:30px;margin-top:8px;color:var(--notion-text);font-weight:500}
+.notion-pack .notion-nav-trial>svg{color:var(--notion-navigation-muted)}
+.notion-pack .notion-trial-remaining{margin-left:auto;padding:0 4px;border-radius:3px;background:var(--notion-info);color:var(--notion-primary);font-size:11px;line-height:18px;font-weight:600;white-space:nowrap}
+.notion-pack .notion-nav-badge{flex:none;max-width:100px;padding:0 4px;border-radius:3px;background:var(--notion-navigation-active);color:var(--notion-navigation-muted);font-size:11px;font-weight:500;line-height:18px;white-space:nowrap}
+.notion-pack .notion-recent-page{gap:7px}
+.notion-pack .notion-recent-page .notion-page-icon{width:20px}
+.notion-pack .notion-nav-tools{margin-top:22px}
+.notion-pack .notion-nav-item[aria-label="Trash"]{color:var(--notion-navigation-muted)}
+.notion-pack .notion-nav-bottom{display:flex;align-items:center;gap:8px;flex:none;height:64px;padding:8px 14px 16px}
+.notion-pack .notion-nav-chat,.notion-pack .notion-nav-compose{height:40px;min-height:40px;border-radius:var(--notion-radius-pill);border-color:var(--notion-border);background:var(--notion-canvas);box-shadow:0 2px 4px #00000008;color:var(--notion-navigation-text)}
+.notion-pack .notion-nav-chat{flex:1;gap:8px;font-size:14px;font-weight:500}
+.notion-pack .notion-nav-chat kbd{padding:0 3px;border-radius:4px;background:var(--notion-surface);color:var(--notion-navigation-muted);font:600 11px/18px var(--notion-font-family)}
+.notion-pack .notion-nav-compose{width:40px;flex:none;padding:0}
+.notion-pack .notion-page-row{height:30px;margin:0 -4px;border-radius:5px}
+.notion-pack .notion-tree-spacer,.notion-pack .notion-tree-toggle{width:10px;min-width:10px;flex:none}
+.notion-pack .notion-tree-toggle{min-height:24px;padding:0;color:var(--notion-navigation-muted)}
+.notion-pack .notion-page-link{height:28px;gap:6px;padding:0 2px;justify-content:flex-start;font-size:14px;font-weight:500;color:var(--notion-navigation-text);touch-action:pan-y}
+.notion-pack .notion-page-link[aria-current="page"]{background:transparent;font-weight:500}
+.notion-pack .notion-page-row:has(.notion-page-link[aria-current="page"]){background:var(--notion-navigation-active)}
+.notion-pack .notion-page-row:hover,.notion-pack .notion-page-row:focus-within{background:var(--notion-navigation-active)}
+.notion-pack .notion-page-row .notion-page-icon{width:20px;flex:none;font-size:16px}
+.notion-pack .notion-page-row .notion-row-actions{height:28px;gap:0;flex-shrink:0}
+.notion-pack .notion-page-row .notion-icon-action{width:22px;min-width:22px;height:24px;min-height:24px;color:var(--notion-navigation-text)}
+.notion-pack .notion-page-row .notion-page-link .notion-nav-badge{margin-left:0}
+.notion-pack .notion-agent-mark,[data-ui-pack="notion"] .notion-agent-mark{color:var(--notion-agent)}
+.notion-pack .notion-chat-navigation>.notion-nav-section:first-child{margin-top:6px}
+.notion-pack .notion-nav-empty{padding:var(--notion-space-3) var(--notion-space-2);color:var(--notion-navigation-muted);font-size:var(--notion-font-small)}
+.notion-pack .notion-meeting-connect{display:flex;flex-direction:column;align-items:center;padding:calc(var(--notion-space-8) + var(--notion-space-6)) var(--notion-space-2) var(--notion-space-8);color:var(--notion-navigation-muted);text-align:center}
+.notion-pack .notion-meeting-connect p{margin:var(--notion-space-2) 0 var(--notion-space-4);font-size:var(--notion-font-body);line-height:var(--notion-line-height)}
+.notion-pack .notion-meeting-connect .notion-button{height:var(--notion-control-height);min-height:var(--notion-control-height);padding:0 var(--notion-space-2);border-radius:var(--notion-radius-control);background:var(--notion-info);color:var(--notion-primary);font-size:var(--notion-font-body)}
+.notion-pack .notion-nav-chat[aria-label="New meeting"]{color:var(--notion-primary);font-weight:600}
+.notion-pack .notion-upcoming-meeting small{font-size:10px}
+.notion-pack .notion-event-dot{width:6px;height:6px;flex:none;background:var(--notion-primary);border-radius:1px}
+@media(hover:none){.notion-pack .notion-nav-collapse,.notion-pack .notion-workspace-chevron{opacity:1}}
+@media(max-width:620px){.notion-pack .notion-sidebar:not(.is-open){padding:0}}
+
+.notion-pack .notion-agent-shortcuts{overflow-x:auto;justify-content:flex-start}
+.notion-pack .notion-agent-shortcuts .notion-button{flex:none}
+.notion-pack .notion-nav-chat[aria-label="New meeting"]{font-size:var(--notion-font-body);padding-inline:var(--notion-space-2);gap:var(--notion-space-1)}

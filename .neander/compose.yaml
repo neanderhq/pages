@@ -1,0 +1,30 @@
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: .neander/Dockerfile
+    ports:
+      - "8080:8080"
+    secrets:
+      - neander_environment
+    x-google-cloudrun:
+      ingress-container: true
+secrets:
+  neander_environment:
+    file: /run/neander/secrets/neander_environment
+x-neander:
+  ingress:
+    service: web
+    port: 8080
+    root_probe: /api/health
+  migration: nextjs-drizzle
+  environment:
+    - {service: web, name: DATABASE_URL, required: true, source: provisioned, provider: Neon}
+    - {service: web, name: APP_URL, required: true, source: provisioned, provider: Neander, binding: public_origin}
+    - {service: web, name: BETTER_AUTH_SECRET, required: true, source: generated, provider: null, generator: opaque-random}
+    - {service: web, name: DEMO_PASSWORD, required: true, source: generated, provider: null, generator: opaque-random}
+    - {service: web, name: EMAIL_PROVIDER, required: false, source: user, provider: null}
+    - {service: web, name: RESEND_API_KEY, required: false, source: user, provider: null}
+    - {service: web, name: EMAIL_FROM, required: false, source: user, provider: null}
+  probes:
+    - {path: /api/health, success_status_range: 2xx}

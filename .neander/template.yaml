@@ -1,0 +1,35 @@
+contract_version: 1
+id: pages
+title: Pages
+description: |
+  **Give your team's knowledge a shared home.**
+
+  Pages is a Notion-inspired team wiki with rich-text documents, nested pages, team spaces and role-based access. Write with headings, lists, tables, code and private attachments; organize information with tags, search and internal links.
+
+  Discuss documents with page and inline comments, resolved mentions and in-app notifications. Review revision history, restore earlier content, export Markdown and publish explicit read-only snapshots. The template includes fictional teammates and useful starter documents, PostgreSQL migrations and generated demo credentials. Configure your own email provider and sender for invitations and recovery email; no delivery key, live workspace or provider account is included.
+category: Knowledge & Wikis
+best_for: Teams organizing handbooks, project knowledge and shared documentation
+features:
+  - Rich-text documents and nested page navigation
+  - Team spaces, groups and Admin, Editor and Viewer roles
+  - Page grants, private attachments and workspace isolation
+  - Inline comments, mentions and in-app notifications
+  - Search, tags, revision history and version restoration
+  - Markdown import/export and read-only public snapshots
+included:
+  - Pages document editor and team workspace
+  - PostgreSQL schema migrations and session authentication
+  - Fictional teammates, handbook, meeting notes and project table
+  - Local setup, security and email configuration guides
+thumbnail: .neander/thumbnail.png
+screenshots:
+  - .neander/screenshots/document.png
+  - .neander/screenshots/project-tracker.png
+  - .neander/screenshots/members.png
+commands:
+  install: [pnpm, install, --frozen-lockfile]
+  check: [pnpm, run, check]
+  test: [pnpm, run, test]
+  verify: [pnpm, run, test:template]
+seed:
+  command: [pnpm, run, db:seed]

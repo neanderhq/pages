@@ -1,0 +1,163 @@
+/* shadcn New York source components, styled by the Notion pack contract. No global utilities or reset. */
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button{appearance:none;display:inline-flex;flex-shrink:0;align-items:center;justify-content:center;gap:7px;min-height:var(--notion-control-height);padding:0 7px;border:0;border-radius:var(--notion-radius-control);background:transparent;color:inherit;font:inherit;white-space:nowrap;cursor:pointer;transition:background var(--notion-motion-hover) ease,color var(--notion-motion-hover) ease}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button>svg{pointer-events:none;flex-shrink:0}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button:disabled{opacity:.5;cursor:default}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button:hover:not(:disabled){background:var(--notion-subtle)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button[data-variant="default"]{background:var(--notion-primary);color:var(--notion-primary-foreground);font-weight:500}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button[data-variant="default"]:hover:not(:disabled){background:var(--notion-primary-hover)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button[data-variant="destructive"]{background:var(--notion-destructive);color:var(--notion-destructive-foreground)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button[data-variant="outline"]{border:1px solid var(--notion-border)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button[data-variant="secondary"]{background:var(--notion-subtle)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button[data-variant="link"],:where(.notion-pack,[data-ui-pack="notion"]) .notion-button[data-variant="link"]:hover:not(:disabled){background:transparent;color:inherit}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button[data-size="input"]{height:var(--notion-control-input-height);min-height:var(--notion-control-input-height)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button[data-size="sm"]{min-height:24px;font-size:var(--notion-font-small)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button[data-size="lg"]{min-height:36px;padding-inline:var(--notion-space-4)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button[data-size="icon"]{width:var(--notion-control-icon-height);height:var(--notion-control-icon-height);min-height:var(--notion-control-icon-height);padding:0}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-button:focus-visible,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-tabs-trigger:focus-visible,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-tabs-content:focus-visible,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-checkbox:focus-visible,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-switch:focus-visible{outline:2px solid var(--notion-accent);outline-offset:1px}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-input,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-textarea{box-sizing:border-box;display:flex;width:100%;min-width:0;margin:0;border:1px solid var(--notion-border);border-radius:var(--notion-radius-control);background:transparent;color:var(--notion-text);font:inherit;outline:0;transition:border-color var(--notion-motion-focus) ease,box-shadow var(--notion-motion-focus) ease}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-input{height:var(--notion-control-input-height);padding:0 var(--notion-space-2)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-input[hidden]{display:none}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-textarea{min-height:60px;padding:var(--notion-space-2);resize:vertical}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-input:focus-visible,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-textarea:focus-visible{border-color:var(--notion-accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--notion-accent) 20%,transparent)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-input::placeholder,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-textarea::placeholder{color:var(--notion-muted)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-input:disabled,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-textarea:disabled{opacity:.5;cursor:default}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-input[aria-invalid="true"],:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-textarea[aria-invalid="true"]{border-color:var(--notion-destructive)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-popover-content,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-content,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-sub-content,[data-ui-pack="notion"].notion-ui-popover-content,[data-ui-pack="notion"].notion-ui-dropdown-menu-content,[data-ui-pack="notion"].notion-ui-dropdown-menu-sub-content{box-sizing:border-box;z-index:1100;min-width:180px;max-width:calc(100vw - 16px);padding:var(--notion-space-1);border:1px solid var(--notion-border);border-radius:var(--notion-radius-modal);background:var(--notion-canvas);color:var(--notion-text);box-shadow:var(--notion-shadow-popover);font:var(--notion-font-body)/var(--notion-line-height) var(--notion-font-family);outline:0}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-popover-content,[data-ui-pack="notion"].notion-ui-popover-content{width:320px}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-item,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-sub-trigger,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-checkbox-item,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-radio-item{position:relative;display:flex;align-items:center;gap:9px;min-height:var(--notion-control-menu-height);padding:4px 8px;border-radius:var(--notion-radius-control);font-size:var(--notion-font-body);line-height:20px;outline:0;cursor:default;user-select:none}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-item[data-highlighted],:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-sub-trigger[data-highlighted],:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-checkbox-item[data-highlighted],:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-radio-item[data-highlighted],:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-sub-trigger[data-state="open"]{background:var(--notion-subtle)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-item[data-disabled],:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-sub-trigger[data-disabled],:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-checkbox-item[data-disabled],:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-radio-item[data-disabled]{opacity:.45;pointer-events:none}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-item>svg,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-sub-trigger>svg{flex-shrink:0}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-checkbox-item,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-radio-item,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-inset{padding-left:32px}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-checkbox-item-2,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-radio-item-2{position:absolute;left:8px;display:flex;align-items:center;justify-content:center;width:16px;height:16px}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-checkbox-item-3{width:16px;height:16px}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-radio-item-3{width:8px;height:8px;fill:currentColor}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-sub-trigger-2{width:15px;height:15px;margin-left:auto;color:var(--notion-muted)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-label{padding:6px 8px;color:var(--notion-muted);font-size:var(--notion-font-small);font-weight:500}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-separator,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-separator{height:1px;margin:4px;background:var(--notion-border)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dropdown-menu-shortcut,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-shortcut{margin-left:auto;font-size:var(--notion-font-small);color:var(--notion-muted)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command{display:flex;flex-direction:column;width:100%;overflow:hidden;background:var(--notion-canvas);color:var(--notion-text)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-input{display:flex;align-items:center;gap:8px;padding:0 10px;border-bottom:1px solid var(--notion-border);color:var(--notion-muted)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-input-2{width:16px;height:16px;flex-shrink:0}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-input-3{width:100%;height:40px;padding:0;border:0;outline:0;background:transparent;color:var(--notion-text);font:inherit}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-input-3::placeholder{color:var(--notion-muted)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-list{max-height:300px;overflow-y:auto;overflow-x:hidden;padding:var(--notion-space-1) 0}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-empty{padding:var(--notion-space-4);text-align:center;color:var(--notion-muted);font-size:var(--notion-font-body)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-group{padding:var(--notion-space-1);overflow:hidden}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-group [cmdk-group-heading]{padding:6px 8px;font-size:var(--notion-font-small);color:var(--notion-muted)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-item{display:flex;align-items:center;gap:9px;min-height:var(--notion-control-menu-height);padding:4px 8px;border-radius:var(--notion-radius-control);outline:0;cursor:default}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-item[data-selected="true"]{background:var(--notion-subtle)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-item[data-disabled="true"]{opacity:.45;pointer-events:none}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-tabs-list{display:inline-flex;align-items:center;gap:4px;padding:0;border:0;border-bottom:1px solid var(--notion-border);color:var(--notion-muted)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-tabs-trigger{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:36px;padding:0 10px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--notion-muted);font:inherit;cursor:pointer}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-tabs-trigger[data-state="active"]{border-bottom-color:var(--notion-text);color:var(--notion-text);font-weight:500}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-tabs-trigger:disabled{opacity:.45;cursor:default}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-tabs-content{outline:0}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-avatar{position:relative;display:flex;flex:none;align-items:center;justify-content:center;width:32px;height:32px;overflow:hidden;border-radius:50%;font-size:12px}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-avatar-image{width:100%;height:100%;object-fit:cover}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-avatar-fallback{display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:inherit;background:var(--notion-subtle)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-checkbox{appearance:none;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:16px;height:16px;padding:0;border:1px solid var(--notion-muted);border-radius:3px;background:transparent;color:var(--notion-primary-foreground);cursor:pointer}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-checkbox[data-state="checked"]{border-color:var(--notion-primary);background:var(--notion-primary)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-checkbox-2{display:flex;align-items:center;justify-content:center}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-checkbox-3{width:14px;height:14px}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-checkbox:disabled,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-switch:disabled{opacity:.45;cursor:default}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-switch{display:inline-flex;align-items:center;flex:none;width:28px;height:17px;padding:2px;border:0;border-radius:var(--notion-radius-pill);background:var(--notion-switch-track);cursor:pointer;transition:background var(--notion-motion-hover) ease}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-switch[data-state="checked"]{background:var(--notion-primary)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-switch-2{display:block;width:13px;height:13px;border-radius:50%;background:var(--notion-primary-foreground);transition:transform var(--notion-motion-hover) ease}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-switch-2[data-state="checked"]{transform:translateX(11px)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-separator{flex-shrink:0;background:var(--notion-border)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-separator-2{width:100%;height:1px}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-separator-3{width:1px;height:100%}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-tooltip-content,[data-ui-pack="notion"].notion-ui-tooltip-content{z-index:1400;max-width:280px;padding:5px 8px;border-radius:var(--notion-radius-control);background:var(--notion-tooltip-background);color:var(--notion-tooltip-foreground);box-shadow:var(--notion-shadow-popover);font:var(--notion-font-small)/1.4 var(--notion-font-family)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-table{position:relative;width:100%;overflow:auto}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-table-2{width:100%;border-collapse:collapse;text-align:left;font-size:var(--notion-font-body)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-table-row{border-bottom:1px solid var(--notion-border);transition:background var(--notion-motion-hover) ease}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-table-row:hover,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-table-row[data-state="selected"]{background:var(--notion-surface)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-table-head{height:33px;padding:4px 8px;text-align:left;vertical-align:middle;font-weight:400;font-size:var(--notion-font-small);color:var(--notion-muted)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-table-cell{height:33px;padding:4px 8px;vertical-align:middle}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-table-caption{padding:var(--notion-space-2);color:var(--notion-muted);font-size:var(--notion-font-small)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-table-footer{background:var(--notion-surface)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dialog-overlay,[data-ui-pack="notion"].notion-ui-dialog-overlay{position:fixed;z-index:1300;inset:0;background:var(--notion-overlay)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dialog-content,[data-ui-pack="notion"].notion-ui-dialog-content{box-sizing:border-box;position:fixed;z-index:1301;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;gap:var(--notion-space-4);width:min(480px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;padding:var(--notion-space-6);border:1px solid var(--notion-border);border-radius:var(--notion-radius-modal);background:var(--notion-canvas);color:var(--notion-text);box-shadow:var(--notion-shadow-dialog);font:var(--notion-font-body)/var(--notion-line-height) var(--notion-font-family)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dialog-content-2{position:absolute;right:12px;top:12px;display:flex;align-items:center;justify-content:center;width:24px;height:24px;padding:0;border:0;border-radius:var(--notion-radius-control);background:transparent;color:var(--notion-muted);cursor:pointer}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dialog-content-2:hover{background:var(--notion-subtle)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dialog-content-3{width:16px;height:16px}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dialog-header{display:flex;flex-direction:column;gap:6px}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dialog-footer{display:flex;justify-content:flex-end;gap:var(--notion-space-2)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dialog-title{margin:0;padding-right:24px;font-size:18px;font-weight:600;line-height:1.3}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dialog-description{margin:0;font-size:var(--notion-font-body);color:var(--notion-muted)}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-command-dialog{padding:0}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(prefers-reduced-motion:reduce){:where(.notion-pack,[data-ui-pack="notion"]) .notion-button,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-input,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-switch,:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-switch-2{transition:none}}
+
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-input[data-appearance="embedded"]{height:100%;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-input[data-appearance="embedded"]:focus-visible{box-shadow:none}
+[data-ui-pack="notion"].notion-ui-popover-content[data-padding="none"]{padding:0}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-tabs-list[data-variant="embedded"]{min-height:36px;border:0}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-tabs-list[data-variant="embedded"]>.notion-ui-tabs-trigger{height:auto;align-self:stretch}
+/* Radix Presence retains closing surfaces until this shared exit animation finishes. */
+[data-ui-pack="notion"].notion-ui-popover-content[data-state="open"],[data-ui-pack="notion"].notion-ui-dropdown-menu-content[data-state="open"],[data-ui-pack="notion"].notion-ui-dropdown-menu-sub-content[data-state="open"],[data-ui-pack="notion"].notion-ui-dialog-content[data-state="open"],[data-ui-pack="notion"].notion-ui-dialog-overlay[data-state="open"]{animation:notion-surface-enter var(--notion-motion-hover) ease-out}
+[data-ui-pack="notion"].notion-ui-popover-content[data-state="closed"],[data-ui-pack="notion"].notion-ui-dropdown-menu-content[data-state="closed"],[data-ui-pack="notion"].notion-ui-dropdown-menu-sub-content[data-state="closed"],[data-ui-pack="notion"].notion-ui-dialog-content[data-state="closed"],[data-ui-pack="notion"].notion-ui-dialog-overlay[data-state="closed"]{animation:notion-surface-exit var(--notion-motion-hover) ease-in;pointer-events:none}
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-dialog-content-2:focus-visible{outline:2px solid var(--notion-accent);outline-offset:1px}
+@keyframes notion-surface-enter{from{opacity:0}to{opacity:1}}
+@keyframes notion-surface-exit{from{opacity:1}to{opacity:0}}
+@media(prefers-reduced-motion:reduce){[data-ui-pack="notion"].notion-ui-popover-content,[data-ui-pack="notion"].notion-ui-dropdown-menu-content,[data-ui-pack="notion"].notion-ui-dropdown-menu-sub-content,[data-ui-pack="notion"].notion-ui-dialog-content,[data-ui-pack="notion"].notion-ui-dialog-overlay{animation:none}}
+/* Adopted shadcn Chart: all container, tooltip and legend styling follows the active pack. */
+.notion-pack .notion-ui-chart{display:flex;justify-content:center;width:100%;height:100%;font:12px/1.4 var(--notion-font-family)}
+.notion-pack .notion-ui-chart .recharts-cartesian-axis-tick text{fill:var(--notion-navigation-muted)}
+.notion-pack .notion-ui-chart .recharts-curve.recharts-tooltip-cursor{stroke:var(--notion-border)}
+.notion-pack .notion-ui-chart .recharts-rectangle.recharts-tooltip-cursor{fill:var(--notion-subtle)}
+.notion-pack .notion-ui-chart .recharts-layer,.notion-pack .notion-ui-chart .recharts-sector,.notion-pack .notion-ui-chart .recharts-surface{outline:none}
+[data-ui-pack="notion"].notion-ui-chart-tooltip{display:grid;min-width:128px;align-items:start;gap:6px;padding:6px 10px;border:1px solid var(--notion-border);border-radius:var(--notion-radius-card);background:var(--notion-canvas);color:var(--notion-text);box-shadow:var(--notion-shadow-popover);font:12px/1.4 var(--notion-font-family)}
+[data-ui-pack="notion"] .notion-ui-chart-label{font-weight:500}
+[data-ui-pack="notion"] .notion-ui-chart-stack{display:grid;gap:6px}
+[data-ui-pack="notion"] .notion-ui-chart-tooltip-row{display:flex;align-items:stretch;flex-wrap:wrap;width:100%;gap:8px}
+[data-ui-pack="notion"] .notion-ui-chart-tooltip-row.is-centered{align-items:center}
+[data-ui-pack="notion"] .notion-ui-chart-tooltip-row>svg{width:10px;height:10px;color:var(--notion-navigation-muted)}
+[data-ui-pack="notion"] .notion-ui-chart-indicator{flex:none;border-radius:2px;border-color:var(--color-border);background:var(--color-bg)}
+[data-ui-pack="notion"] .notion-ui-chart-indicator.is-dot{width:10px;height:10px}
+[data-ui-pack="notion"] .notion-ui-chart-indicator.is-line{width:4px}
+[data-ui-pack="notion"] .notion-ui-chart-indicator.is-dashed{width:0;border-width:1.5px;border-style:dashed;background:transparent}
+[data-ui-pack="notion"] .notion-ui-chart-indicator.is-nested{margin:2px 0}
+[data-ui-pack="notion"] .notion-ui-chart-value-row{display:flex;flex:1;justify-content:space-between;align-items:center;line-height:1;gap:16px}
+[data-ui-pack="notion"] .notion-ui-chart-value-row.is-end{align-items:flex-end}
+[data-ui-pack="notion"] .notion-ui-chart-muted{color:var(--notion-navigation-muted)}
+[data-ui-pack="notion"] .notion-ui-chart-number{color:var(--notion-text);font-family:ui-monospace,monospace;font-weight:500;font-variant-numeric:tabular-nums}
+.notion-pack .notion-ui-chart-legend{display:flex;align-items:center;justify-content:center;gap:16px}
+.notion-pack .notion-ui-chart-legend.is-top{padding-bottom:12px}.notion-pack .notion-ui-chart-legend.is-bottom{padding-top:12px}
+.notion-pack .notion-ui-chart-legend-item{display:flex;align-items:center;gap:6px}
+.notion-pack .notion-ui-chart-legend-item>svg{width:12px;height:12px;color:var(--notion-navigation-muted)}
+.notion-pack .notion-ui-chart-swatch{width:8px;height:8px;flex:none;border-radius:2px}
+/* Pinned shadcn Select; scoped tokens and portal theme follow the other adopted controls. */
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-1{display:flex;align-items:center;justify-content:space-between;gap:var(--notion-space-2);width:100%;height:var(--notion-control-input-height);border:1px solid var(--notion-border);border-radius:var(--notion-radius-control);background:var(--notion-canvas);color:var(--notion-text);padding:0 var(--notion-space-3);font:inherit;font-size:var(--notion-control-font);text-align:left;cursor:pointer}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-1:focus-visible{outline:2px solid var(--notion-accent);outline-offset:1px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-1:disabled{opacity:.45;cursor:default}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-2{width:16px;height:16px;opacity:.5}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-3{display:flex;justify-content:center;align-items:center;padding:var(--notion-space-1)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-4{width:16px;height:16px}
+[data-ui-pack="notion"].notion-select-style-5{position:relative;z-index:100;max-height:min(380px,var(--radix-select-content-available-height));min-width:128px;overflow:hidden;border:1px solid var(--notion-border);border-radius:var(--notion-radius-control);background:var(--notion-canvas);color:var(--notion-text);font-family:var(--notion-font-family);font-size:var(--notion-font-body);box-shadow:var(--notion-shadow-popover)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-7{padding:var(--notion-space-1)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-8{min-width:var(--radix-select-trigger-width)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-9{padding:var(--notion-space-2);font-size:var(--notion-font-small);font-weight:600}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-10{position:relative;display:flex;align-items:center;min-height:var(--notion-control-menu-height);padding:var(--notion-space-1) var(--notion-space-8) var(--notion-space-1) var(--notion-space-2);border-radius:var(--notion-radius-control);outline:none;cursor:default;user-select:none}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-10[data-highlighted]{background:var(--notion-hover)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-10[data-disabled]{opacity:.45;pointer-events:none}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-11{position:absolute;right:var(--notion-space-2);display:flex;align-items:center;justify-content:center;width:14px;height:14px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-style-12{height:1px;background:var(--notion-border);margin:var(--notion-space-1) 0}
+/* Adopted menus must remain scrollable within Radix's collision boundary. */
+[data-ui-pack="notion"].notion-ui-dropdown-menu-content,[data-ui-pack="notion"].notion-ui-dropdown-menu-sub-content{max-height:min(480px,var(--radix-dropdown-menu-content-available-height,calc(100vh - 24px)));overflow-y:auto;overscroll-behavior:contain}
+[data-ui-pack="notion"].notion-ui-popover-content{max-height:var(--radix-popover-content-available-height,calc(100vh - 24px));overflow-y:auto;overscroll-behavior:contain}
+
+/* Invalid choice controls share the field error and focus treatment. */
+:where(.notion-pack,[data-ui-pack="notion"]) .notion-ui-select-trigger[aria-invalid="true"]{border-color:var(--notion-destructive)}
+:where(.notion-pack,[data-ui-pack="notion"]) :is(.notion-ui-input,.notion-ui-textarea,.notion-ui-select-trigger)[aria-invalid="true"]:focus-visible{border-color:var(--notion-destructive);box-shadow:0 0 0 2px color-mix(in srgb,var(--notion-destructive) 20%,transparent)}
+
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-menu{border-color:transparent;box-shadow:none;justify-content:flex-end;text-align:right;padding-inline:4px;color:var(--notion-muted);height:30px}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-menu:hover:not(:disabled){background:var(--notion-subtle)}
+:is(.notion-pack,[data-ui-pack="notion"]) .notion-select-menu>svg{transform:rotate(-90deg)}
+@media(prefers-reduced-motion:reduce){
+ :where(.notion-pack,[data-ui-pack="notion"]),:where(.notion-pack,[data-ui-pack="notion"]) *,:where(.notion-pack,[data-ui-pack="notion"]) *::before,:where(.notion-pack,[data-ui-pack="notion"]) *::after{transition-duration:0s!important;animation-duration:0s!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+}
+
+/* Radix keeps the positioning wrapper during exit. Release its hitbox with the surface. */
+[data-radix-popper-content-wrapper]:has(>[data-ui-pack="notion"][data-state="closed"]){pointer-events:none}

@@ -1,0 +1,107 @@
+{
+  "repository": "https://github.com/shadcn-ui/ui",
+  "release": "shadcn@2.1.8",
+  "commit": "9253b43f29e6f54e20e7d2e10647f0755753f6b0",
+  "style": "new-york",
+  "license": "MIT",
+  "adaptations": [
+    "Consolidate Radix imports to the declared radix-ui package.",
+    "Resolve utils and sibling component imports locally.",
+    "Replace Tailwind utility strings with Notion scoped semantic classes so generated consumers do not need a global Tailwind reset.",
+    "Keep upstream React 18 forwardRef, component APIs, keyboard behavior, and accessibility semantics.",
+    "Add automatic active pack/theme markers to portaled content; use a dedicated theme context.",
+    "Adapt button variant sizes to Notion tokens while retaining cva and the upstream Button composition.",
+    "Route all icons through a pack-local Lucide export so registry installers cannot remap only some controls to another icon family.",
+    "Add shared embedded TabsList and unpadded PopoverContent variants for composed panel headers; all surfaces use the same focus and state rules.",
+    "Chart retains the upstream context, forwardRef container, tooltip/legend and series lookup. Scope generated chart selectors to Notion themes and namespaced IDs; replace utility strings with semantic classes; adapt tooltip/legend content types to pinned Recharts 3.3.0.",
+    "DialogContent accepts optional showCloseButton and overlayClassName; defaults preserve upstream modal semantics. Workspace search and center peek reuse this Dialog with pack-scoped overlays.",
+    "Shared modal depth context assigns popup, select, tooltip, overlay and dialog layers so nested controls remain above their owning modal and below subsequent modals. Select is adopted from the same pinned upstream release.",
+    "Bound menu/popover scroll areas to Radix collision-height variables so long property lists stay reachable. The NotionSelect adapter adds a shared semantic trigger class for composed settings/table variants.",
+    "Use one scoped invalid border/focus-ring treatment for adopted Input, Textarea and Select controls, preserving their upstream ARIA/keyboard behavior.",
+    "Menu-style Select triggers compose the same adopted Select; reduced-motion overrides cover all active pack roots/portals, and closing surfaces stop taking pointer events during their exit animation. The Radix positioning wrapper also releases its hitbox while its Notion child exits.",
+    "NotionSelect composes adopted SelectItem/SelectSeparator with optional decorative palette swatches; selected trigger values retain plain accessible labels.",
+    "PopoverContent accepts an optional portal container for selection controls owned by a modal; Radix focus, dismissal and Floating UI collision handling are retained."
+  ],
+  "components": [
+    {
+      "file": "avatar.tsx",
+      "source": "apps/www/registry/new-york/ui/avatar.tsx",
+      "upstream_sha256": "e78b35ed76c67d8ff50603fbe0dfa4fe600097bd860d89e65beea3e16683dad8"
+    },
+    {
+      "file": "button.tsx",
+      "source": "apps/www/registry/new-york/ui/button.tsx",
+      "upstream_sha256": "c2b999a96781e6c932632bd089095368e973bf5602e1b1a62156b7d2b43f1e84"
+    },
+    {
+      "file": "checkbox.tsx",
+      "source": "apps/www/registry/new-york/ui/checkbox.tsx",
+      "upstream_sha256": "da3ac46877c697a12e04c8b84e18d408f54c48faf8ccef710231e4f676ddd35e"
+    },
+    {
+      "file": "command.tsx",
+      "source": "apps/www/registry/new-york/ui/command.tsx",
+      "upstream_sha256": "bafb47a1bf2378230b53d4105cd6d246ac3ddd812d11b032157a1f9ddb38bad7"
+    },
+    {
+      "file": "dialog.tsx",
+      "source": "apps/www/registry/new-york/ui/dialog.tsx",
+      "upstream_sha256": "fe70a91bb924ef3a40b7504e6847ef9a57aed3b503d2a7dbb7610e821ea40b6f"
+    },
+    {
+      "file": "dropdown-menu.tsx",
+      "source": "apps/www/registry/new-york/ui/dropdown-menu.tsx",
+      "upstream_sha256": "36426208a5bd0bf344c586d5b0b05a5c7d1c06fe28ff254eb8c64f99bd4b3712"
+    },
+    {
+      "file": "input.tsx",
+      "source": "apps/www/registry/new-york/ui/input.tsx",
+      "upstream_sha256": "6299a6a387dc55e528aec4342deaea0b83f1ea3a365c135a31a18ee55334f441"
+    },
+    {
+      "file": "popover.tsx",
+      "source": "apps/www/registry/new-york/ui/popover.tsx",
+      "upstream_sha256": "e0ba2e3c09da7aceaf480c2e6cd3b18e9edcbc584823949b6be0f40ea035c834"
+    },
+    {
+      "file": "separator.tsx",
+      "source": "apps/www/registry/new-york/ui/separator.tsx",
+      "upstream_sha256": "995c54f1c5c688f712a675fe35d55bcada2b31dba561dcc71553a1ad601e59ec"
+    },
+    {
+      "file": "switch.tsx",
+      "source": "apps/www/registry/new-york/ui/switch.tsx",
+      "upstream_sha256": "ab2d009e0fa7366f47ae1a6e0ca35d0aac55c6264c5f61718e12366c196163b4"
+    },
+    {
+      "file": "table.tsx",
+      "source": "apps/www/registry/new-york/ui/table.tsx",
+      "upstream_sha256": "a4a6972c2d47d465d7f02c1dc4a6cbfeda7a97e46479c1b0cebdaf26bf9b497a"
+    },
+    {
+      "file": "tabs.tsx",
+      "source": "apps/www/registry/new-york/ui/tabs.tsx",
+      "upstream_sha256": "d41aded0394298102614635e15d709369c6bdae8fe79b918b8341ef39407ee03"
+    },
+    {
+      "file": "textarea.tsx",
+      "source": "apps/www/registry/new-york/ui/textarea.tsx",
+      "upstream_sha256": "ec7c92aaed80f6923a7caa4bfe4eead395b50a7001504fd7fbb0b9381804dae9"
+    },
+    {
+      "file": "tooltip.tsx",
+      "source": "apps/www/registry/new-york/ui/tooltip.tsx",
+      "upstream_sha256": "40b1b8af0ea2170d9521cc8e1c7dd9a1566a79b7905283170d17261c0118d195"
+    },
+    {
+      "file": "chart.tsx",
+      "source": "apps/www/registry/new-york/ui/chart.tsx",
+      "upstream_sha256": "77ac45c5dc42e4d55ae964bf2589cfa823d0f5be3961f5b8a97a82dde90b7a28"
+    },
+    {
+      "file": "select.tsx",
+      "source": "apps/www/registry/new-york/ui/select.tsx",
+      "upstream_sha256": "fc3bbe2c8634f897f06c5e9bc9d7b42a0cdd55c0fe68f3003c076b2510bb8137"
+    }
+  ]
+}
