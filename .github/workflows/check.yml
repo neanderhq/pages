@@ -118,6 +118,8 @@ jobs:
           PAGES_TEST_DEVICE: android
         run: pnpm test:editor-browser
       - name: Verify the built application and seeded data
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/pages-image-browser
         run: pnpm test:production
       - name: Upload runtime security report
         if: always()

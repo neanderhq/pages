@@ -25,6 +25,9 @@ async function main() {
   assert.ok(["127.0.0.1","localhost"].includes(new URL(database).hostname), "Use an explicitly disposable loopback database");
   const configured=new URL(process.env.NEANDER_TEMPLATE_TEST_ORIGIN || process.env.APP_URL || "http://127.0.0.1:8080");
   assert.ok(["127.0.0.1","localhost"].includes(configured.hostname));
+  // The private publisher starts with a clean runner, not app CI's browser cache.
+  console.info("Provisioning pinned Playwright Chromium for template verification.");
+  await exec("pnpm",["exec","playwright","install","--with-deps","chromium"],{timeout:300000,maxBuffer:4*1024*1024});
   const directory=await mkdtemp(join(tmpdir(),"pages-image-check-"));
   const name="pages-image-check-"+randomUUID().slice(0,12), contexts=[];
   const db=new Client({connectionString:database});await db.connect();
