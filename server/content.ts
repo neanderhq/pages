@@ -249,19 +249,27 @@ function escapeMarkdown(value: string) {
   return value.replace(/([\\`*_{}\[\]()#+.!|>~-])/g, "\\$1");
 }
 
-function renderInline(value: unknown): string {
+function markdownCodeSpan(value: string): string {
+  if (!value) return "";
+  const longest = (value.match(/`+/g) ?? []).reduce((length, run) => Math.max(length, run.length), 0);
+  const fence = "`".repeat(longest + 1);
+  const padding = /^[` ]|[` ]$/.test(value) && /[^ ]/.test(value) ? " " : "";
+  return `${fence}${padding}${value}${padding}${fence}`;
+}
+
+function renderInline(value: unknown, tableCell = false): string {
   if (!Array.isArray(value)) return "";
   return value.map((item: unknown): string => {
     if (!isObject(item)) return "";
     if (item.type === "link") {
       const href = safeLink(item.href);
-      const label = renderInline(item.content);
-      return href ? `[${label}](${href.replace(/[)\\]/g, "\\$&")})` : label;
+      const label = renderInline(item.content, tableCell);
+      return href ? `[${label}](${href.replace(/[)\\|]/g, "\\$&")})` : label;
     }
     if (item.type !== "text") return "";
     const content = String(item.text ?? "");
     const style = isObject(item.styles) ? item.styles : {};
-    if (style.code === true) return `\`${content.replace(/`/g, "\\`")}\``;
+    if (style.code === true) return (tableCell ? content.split("|") : [content]).map(markdownCodeSpan).join("\\|");
     return `${style.bold === true ? "**" : ""}${style.italic === true ? "*" : ""}${style.strike === true ? "~~" : ""}${escapeMarkdown(content)}${style.strike === true ? "~~" : ""}${style.italic === true ? "*" : ""}${style.bold === true ? "**" : ""}`;
   }).join("");
 }
@@ -281,7 +289,7 @@ function renderBlock(block: Json, depth: number): string {
     const code = Array.isArray(block.content) ? block.content.map(part => isObject(part) ? String(part.text ?? "") : "").join("") : "";
     output = `\`\`\`${typeof props.language === "string" ? props.language : ""}\n${code}\n\`\`\``;
   } else if (type === "table" && isObject(block.content) && Array.isArray(block.content.rows)) {
-    const rows = block.content.rows.map(row => isObject(row) && Array.isArray(row.cells) ? row.cells.map(cell => renderInline(tableCellContent(cell)).replace(/\|/g, "\\|")) : []);
+    const rows = block.content.rows.map(row => isObject(row) && Array.isArray(row.cells) ? row.cells.map(cell => renderInline(tableCellContent(cell), true)) : []);
     if (rows.length) output = [rows[0], rows[0].map(() => "---"), ...rows.slice(1)].map(row => `| ${row.join(" | ")} |`).join("\n");
   } else if (type === "image") output = `![${escapeMarkdown(String(props.caption || props.name || "image"))}](${String(props.url ?? "").replace(/[)\\]/g, "\\$&")})`;
   else if (type === "file") output = `[${escapeMarkdown(String(props.name || "file"))}](${String(props.url ?? "")})`;

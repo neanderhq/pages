@@ -8,6 +8,28 @@ import { randomUUID } from "node:crypto";
 import { createApp } from "../server/app.ts";
 import { openDatabase } from "../server/database.ts";
 import * as schema from "../server/schema.ts";
+import { contentToMarkdown, markdownToContent } from "../server/content.ts";
+
+test("Markdown export preserves backslashes and cannot close an inline code span with payload backticks", () => {
+  const payload = "`C:\\notes\\` [untrusted](https://example.test) ``";
+  const markdown = contentToMarkdown("Code", [{ type: "paragraph", content: [{ type: "text", text: payload, styles: { code: true } }] }]);
+  assert.equal(markdown.split("\n\n")[1], "``` " + payload + " ```");
+  assert.match(markdown, /C:\\notes\\/);
+});
+
+test("Markdown tables escape plain-text delimiters once and preserve code-cell pipes", () => {
+  const cell = (text: string, code = false) => ({ type: "tableCell", props: {}, content: [{ type: "text", text, styles: code ? { code: true } : {} }] });
+  const literal = "C:\\notes | next";
+  const markdown = contentToMarkdown("Table", [{ type: "table", content: { type: "tableContent", rows: [
+    { cells: [cell("Path"), cell("Command")] },
+    { cells: [cell(literal), cell("left|right", true)] },
+  ] } }]);
+  assert.match(markdown, /`left`\\\|`right`/);
+  const table = markdownToContent(markdown).find(block => block.type === "table")!;
+  const row = (table.content as { rows: { cells: { content: { text: string }[] }[] }[] }).rows[1];
+  assert.equal(row.cells[0].content.map(part => part.text).join(""), literal);
+  assert.equal(row.cells[1].content.map(part => part.text).join(""), "left|right");
+});
 
 const origin = "http://127.0.0.1:5173";
 const password = "A long unique test password 42!";

@@ -1,4 +1,4 @@
-import { api, ApiError } from "./api";
+import { api, apiPathSegment, ApiError } from "./api";
 
 // Typed client for the Step 2 page routes in server/pages.ts. The server decides access; these helpers only shape requests.
 export type PageRole = "editor" | "commenter" | "viewer";
@@ -24,22 +24,22 @@ export class ConflictError extends Error {
 }
 
 export function pagesApi(companyId: string) {
-  const base = `/api/companies/${encodeURIComponent(companyId)}`;
+  const base = `/api/companies/${apiPathSegment(companyId)}`;
   return {
     tree: () => api<{ pages: TreePage[] }>(`${base}/pages`),
     favorites: () => api<{ pages: PageLink[] }>(`${base}/favorites`),
     recent: () => api<{ pages: PageLink[] }>(`${base}/recent`),
     archived: () => api<{ pages: ArchivedPage[] }>(`${base}/pages/archived`),
-    page: (id: string) => api<{ page: PageDetail; breadcrumbs: { id: string; title: string }[] }>(`${base}/pages/${id}`),
-    publicSnapshotStatus: (id: string) => api<{ published: boolean }>(`${base}/pages/${id}/public-snapshot`),
-    publishSnapshot: (id: string) => api<{ published: true; url: string }>(`${base}/pages/${id}/public-snapshot`, "POST", {}),
-    revokeSnapshot: (id: string) => api<{ ok: true; published: false }>(`${base}/pages/${id}/public-snapshot`, "DELETE", {}),
+    page: (id: string) => api<{ page: PageDetail; breadcrumbs: { id: string; title: string }[] }>(`${base}/pages/${apiPathSegment(id)}`),
+    publicSnapshotStatus: (id: string) => api<{ published: boolean }>(`${base}/pages/${apiPathSegment(id)}/public-snapshot`),
+    publishSnapshot: (id: string) => api<{ published: true; url: string }>(`${base}/pages/${apiPathSegment(id)}/public-snapshot`, "POST", {}),
+    revokeSnapshot: (id: string) => api<{ ok: true; published: false }>(`${base}/pages/${apiPathSegment(id)}/public-snapshot`, "DELETE", {}),
     templates: () => api<{ templates: PageTemplate[] }>(`${base}/templates`),
     create: (body: { title?: string; parentId?: string | null; spaceId?: string | null; templateId?: string }) => api<{ id: string; slug: string }>(`${base}/pages`, "POST", body),
     importMarkdown: (spaceId: string | null, files: { path: string; content: string }[]) => api<{ imported: number; pages: { id: string; title: string; path: string }[] }>(`${base}/pages/import-markdown`, "POST", { spaceId, files }),
     async exportMarkdown(id: string) {
       let response: Response;
-      try { response = await fetch(`${base}/pages/${id}/export-markdown`, { credentials: "same-origin" }); }
+      try { response = await fetch(`${base}/pages/${apiPathSegment(id)}/export-markdown`, { credentials: "same-origin" }); }
       catch { throw new ApiError("Could not reach the workspace server. Please try again.", 0); }
       if (!response.ok) {
         const data = await response.json().catch(() => ({}));
@@ -47,18 +47,18 @@ export function pagesApi(companyId: string) {
       }
       return response.blob();
     },
-    rename: (id: string, title: string) => api<{ ok: true; title: string }>(`${base}/pages/${id}`, "PATCH", { title }),
-    duplicate: (id: string) => api<{ id: string; count: number }>(`${base}/pages/${id}/duplicate`, "POST", {}),
-    access: (target: SharingTarget) => api<AccessSummary>(`${base}/${target.kind === "page" ? "pages" : "spaces"}/${target.id}/grants`),
-    saveAccess: (target: SharingTarget, body: { inherits: boolean; grants: Grant[]; confirmSelfLockout: boolean }) => api<{ ok: true }>(`${base}/${target.kind === "page" ? "pages" : "spaces"}/${target.id}/grants`, "PUT", body),
-    moveImpact: (id: string, body: { parentId: string | null; spaceId: string | null }) => api<{ changed: boolean; token: string }>(`${base}/pages/${id}/move-impact`, "POST", body),
-    move: (id: string, body: { parentId: string | null; spaceId?: string | null; beforeId?: string; accessAcknowledgement?: string }) => api<{ ok: true }>(`${base}/pages/${id}/move`, "POST", body),
-    archive: (id: string) => api<{ ok: true }>(`${base}/pages/${id}/archive`, "POST", {}),
-    restore: (id: string) => api<{ id: string }>(`${base}/pages/${id}/restore`, "POST", {}),
-    favorite: (id: string, on: boolean) => api<{ ok: true }>(`${base}/favorites/${id}`, on ? "PUT" : "DELETE", {}),
+    rename: (id: string, title: string) => api<{ ok: true; title: string }>(`${base}/pages/${apiPathSegment(id)}`, "PATCH", { title }),
+    duplicate: (id: string) => api<{ id: string; count: number }>(`${base}/pages/${apiPathSegment(id)}/duplicate`, "POST", {}),
+    access: (target: SharingTarget) => api<AccessSummary>(`${base}/${target.kind === "page" ? "pages" : "spaces"}/${apiPathSegment(target.id)}/grants`),
+    saveAccess: (target: SharingTarget, body: { inherits: boolean; grants: Grant[]; confirmSelfLockout: boolean }) => api<{ ok: true }>(`${base}/${target.kind === "page" ? "pages" : "spaces"}/${apiPathSegment(target.id)}/grants`, "PUT", body),
+    moveImpact: (id: string, body: { parentId: string | null; spaceId: string | null }) => api<{ changed: boolean; token: string }>(`${base}/pages/${apiPathSegment(id)}/move-impact`, "POST", body),
+    move: (id: string, body: { parentId: string | null; spaceId?: string | null; beforeId?: string; accessAcknowledgement?: string }) => api<{ ok: true }>(`${base}/pages/${apiPathSegment(id)}/move`, "POST", body),
+    archive: (id: string) => api<{ ok: true }>(`${base}/pages/${apiPathSegment(id)}/archive`, "POST", {}),
+    restore: (id: string) => api<{ id: string }>(`${base}/pages/${apiPathSegment(id)}/restore`, "POST", {}),
+    favorite: (id: string, on: boolean) => api<{ ok: true }>(`${base}/favorites/${apiPathSegment(id)}`, on ? "PUT" : "DELETE", {}),
     // Autosave: a 409 becomes a ConflictError carrying both versions so the editor never overwrites silently.
     async save(id: string, content: Block[], baseRevision: number) {
-      const response = await fetch(`${base}/pages/${id}/content`, { method: "PUT", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ content, baseRevision }) })
+      const response = await fetch(`${base}/pages/${apiPathSegment(id)}/content`, { method: "PUT", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ content, baseRevision }) })
         .catch(() => { throw new ApiError("You seem to be offline. Your changes are kept here.", 0); });
       const data = await response.json().catch(() => ({}));
       if (response.status === 409 && data.current) throw new ConflictError(data as Conflict);
@@ -67,7 +67,7 @@ export function pagesApi(companyId: string) {
     },
     // Uploads go to the authorized attachment route; the returned URL only works for people who can view the page.
     async upload(id: string, file: File) {
-      const response = await fetch(`${base}/pages/${id}/attachments`, { method: "POST", credentials: "same-origin", headers: { "Content-Type": file.type || "application/octet-stream", "X-File-Name": encodeURIComponent(file.name) }, body: file })
+      const response = await fetch(`${base}/pages/${apiPathSegment(id)}/attachments`, { method: "POST", credentials: "same-origin", headers: { "Content-Type": file.type || "application/octet-stream", "X-File-Name": encodeURIComponent(file.name) }, body: file })
         .catch(() => { throw new ApiError("The file could not be uploaded. Check your connection and try again.", 0); });
       const data = await response.json().catch(() => ({}));
       if (!response.ok) throw new ApiError(data.message || "The file could not be uploaded.", response.status);
